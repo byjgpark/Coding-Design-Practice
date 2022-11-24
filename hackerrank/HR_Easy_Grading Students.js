@@ -1,4 +1,6 @@
 function multipleOfFive(x) {
+
+    
     // i = 0 => x = grades[0] = 73
     let counter = 0;
     while (x % 5 != 0) {
