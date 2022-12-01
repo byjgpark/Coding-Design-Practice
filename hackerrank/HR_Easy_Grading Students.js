@@ -10,6 +10,7 @@ function gradeDiff(grade){
 
 function gradingStudents(grades) {
    
+   // upload comments
    let answer = []
    // console.log("check grades", grades)    
    
@@ -17,9 +18,21 @@ function gradingStudents(grades) {
        let difference = gradeDiff(grades[i])
        let nextNum = grades[i] + difference
        
-       if( difference <3 && grades[i] ){
+       console.log("check difference", difference)
+       
+       // difference < 3 
+       if( difference < 3 && grades[i] >= 38){
            answer.push(nextNum)
+       }
+       else if ( difference >= 3 && grades[i] >= 38){
+           answer.push(grades[i])
+       }
+       else if ( grades[i] <= 38){
+           answer.push(grades[i])   
        }
    }
    
+   console.log('check grades', answer)
    
+   return answer
+}
