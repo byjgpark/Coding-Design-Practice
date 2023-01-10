@@ -1,4 +1,5 @@
 function encryption(s) {
+<<<<<<< Updated upstream
     // Write your code here    
     const ceil = Math.ceil(Math.sqrt(s.length));
     // console.log("check s ", s, "check s length", s.length)
@@ -23,4 +24,12 @@ function encryption(s) {
     };
     return result.join(' ');
     
+=======
+    // Write your code here
+       
+    
+          
+
+       
+>>>>>>> Stashed changes
 }
