@@ -21,6 +21,7 @@ function encryption(s) {
                  return r + (v[i] || "")
          }, "")
      )
+     
     };
     return result.join(' ');
 }
