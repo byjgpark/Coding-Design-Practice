@@ -7,6 +7,8 @@ function encryption(s) {
     let temp = s;
     let array = [];
        
+
+    
     while(temp) {
          array = array.concat(temp.substring(0, ceil));
          console.log("check array", array)
