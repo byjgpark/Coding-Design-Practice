@@ -23,6 +23,7 @@ function encryption(s) {
      )
      
      
+     
     };
     return result.join(' ');
 }
