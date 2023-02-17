@@ -28,6 +28,7 @@ let sortedArray = a.sort(function(a,b){
         //      currentArray.push(sortedArray[i]);
         //  }
         
+        
         console.log("check result", result)
      }
      return longestArray;
