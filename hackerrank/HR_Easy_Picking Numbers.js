@@ -14,6 +14,7 @@ let sortedArray = a.sort(function(a,b){
         let result = Math.abs(sortedArray[startNumber] - sortedArray[i]);
         
         
+        
         // if (result <= 1){
         //     currentArray.push(sortedArray[i]);
         //  if(currentArray.length > longestArray){
