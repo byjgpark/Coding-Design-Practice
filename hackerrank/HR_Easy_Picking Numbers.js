@@ -7,6 +7,7 @@ let sortedArray = a.sort(function(a,b){
     console.log("check sortedArray", sortedArray)
     
     
+    
     let currentArray = [];
     let longestArray = 0;
     let startNumber = 0;
