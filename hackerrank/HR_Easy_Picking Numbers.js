@@ -6,6 +6,7 @@ let sortedArray = a.sort(function(a,b){
 
     
     
+    
     console.log("check a", a)
     console.log("check sortedArray", sortedArray)
     
