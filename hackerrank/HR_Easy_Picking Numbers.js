@@ -26,6 +26,7 @@ function pickingNumbers(a) {
         currentArray.push(sortedArray[i]);
         // i = 0 => currentArray = [1] 
         
+        
         if(currentArray.length > longestArray){
             longestArray = currentArray.length
         };
