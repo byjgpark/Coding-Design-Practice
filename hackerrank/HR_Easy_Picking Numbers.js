@@ -10,7 +10,9 @@ function pickingNumbers(a) {
     console.log("check sortedArray", sortedArray)
 
     let currentArray = [];
+    // i = 0 => currentArray = [1]
     let longestArray = 0;
+    // i = 0 => longestArray = 1
     let startNumber = 0;
     
     for(let i = 0; i < sortedArray.length; i++){
@@ -19,18 +21,14 @@ function pickingNumbers(a) {
         // i = 0 => result = sortedArray[0] - sortedArray[0] => 1 - 1 = 0
         // i = 1 => result = sortedArray[0] - sortedArray[1] => 1 - 3 = 2
         
-        console.log("check result", result)
-        
-        
         if (result <= 1){
         currentArray.push(sortedArray[i]);
         // i = 0 => currentArray = [1] 
         
-        
         if(currentArray.length > longestArray){
             longestArray = currentArray.length
         };
-        // i = 1 > 0
+        // i = 0 => i = 1 > 0
         // longestArray = 1
             
         }else {
@@ -40,7 +38,6 @@ function pickingNumbers(a) {
         if(currentArray.length > longestArray){
             longestArray = currentArray.length
         }
-        
         
         
         currentArray = [];
