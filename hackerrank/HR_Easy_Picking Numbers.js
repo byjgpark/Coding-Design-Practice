@@ -15,6 +15,7 @@ function pickingNumbers(a) {
     
     for(let i = 0; i < sortedArray.length; i++){
         
+        
         let result = Math.abs(sortedArray[startNumber] - sortedArray[i]);
         // i = 0 => result = sortedArray[0] - sortedArray[0] => 1 - 1 = 0
         // i = 1 => result = sortedArray[0] - sortedArray[1] => 1 - 3 = 2
