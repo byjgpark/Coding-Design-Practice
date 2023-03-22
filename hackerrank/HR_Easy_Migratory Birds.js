@@ -1,22 +1,29 @@
 function migratoryBirds(arr) {
-    let max = 0;
-    let max_id = 6;
-    let store = new Array(6).fill(0);
+
+    let largest = 1;
+    let counter = largest;
     
-    console.log("check store", store)
+    console.log("check counter before for-loop", counter)
     
-    for(const num of arr){
-        // store[num]++;
-        // console.log("check num", store[num]++)
-        console.log("check num", store[num]++)   
-        // console.log("check num", store[num]++)
+    let type = 0;
+    
+    arr.sort();
+    
+    console.log("check arr", arr)
+    
+    for (let i = 0; i < arr.length; i = arr.lastIndexOf(arr[i]) + 1 ) {
         
-        // if(store[num] > max){
-        //     max = store[num]
-        //     max_id = num;
-        // }else if(store[num] === max && num < max_id){
-        //     max_id = num;
-        // }
+        
+        largest = (arr.lastIndexOf(arr[i]) - arr.indexOf(arr[i]))+1;
+        
+        console.log("check i", i, "arr[i]", arr[i], " largest", largest, "counter", counter, "inside for-loop")
+        // console.log("check largest inside for-loop", largest)
+        
+        if (largest > counter) {
+            counter = largest;
+            type = arr[i];
+        }
     }
-    return max_id;
+    return type;
+    
 }
