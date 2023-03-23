@@ -9,6 +9,7 @@ function migratoryBirds(arr) {
     
     arr.sort();
     
+    
     console.log("check arr", arr)
     
     for (let i = 0; i < arr.length; i = arr.lastIndexOf(arr[i]) + 1 ) {
