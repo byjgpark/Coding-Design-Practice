@@ -4,6 +4,7 @@ function migratoryBirds(arr) {
     let counter = 1;
     // sorting the array in ascending order
     arr.sort()
+    
     let type = 0
     
     // Looping through the first index of occurrence number in the array
