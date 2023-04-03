@@ -7,6 +7,7 @@ function migratoryBirds(arr) {
     
     let type = 0;
     
+    
     arr.sort();
     
     
