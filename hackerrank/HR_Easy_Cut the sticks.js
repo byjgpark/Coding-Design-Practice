@@ -4,6 +4,7 @@ function cutTheSticks(arr) {
     
     console.log("check arr", arr)
     
+    
     while (arr.length != 0) {
         
         let minVal = Math.min(...arr);
