@@ -31,6 +31,7 @@ function cutTheSticks(arr) {
                 // console.log("chech arr in the else loop", arr)
             }
         //  console.log("check i here after if statement ", i)
+        
          }
     }
     return output;
