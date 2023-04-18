@@ -20,6 +20,7 @@ function cutTheSticks(arr) {
             
             // console.log("check i before decrement ", i) 
 
+            
             if (sub === 0) {
                 console.log("check i before decrement ", i) 
                 arr.splice(i, 1);
