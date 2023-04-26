@@ -1,31 +1,35 @@
 function cutTheSticks(arr) {
     
-    // Write your code here
-    
-    console.log("check arr", arr)
-    
-    let sizeOfArray = []
-    
-    // console.log('check minValue', minValue)
-    
-    sizeOfArray.push(arr)
-    
-    while(arr != 0){
+    // Initializing empty array
+    let emptyArr = []
         
-        let minValue = Math.min(...arr)
+    // Looping through array until arr.length hits 0    
+    while(arr.length != 0){
+    
+    // Finding min value from arr
+    let minValue = Math.min(...arr);
+    
+    // Pushing arr.length after breaking out of a for-loop
+    emptyArr.push(arr.length)
+    
+    for(let i = 0; i< arr.length; i++){
         
-        for(let i = 0; i < arr.length; i++){
+        // Subtrackig minValue from each element of arr   
+        let sub = arr[i] - minValue;
+        
+        // When sub is 0, remove element at index i
+        if(sub === 0){
+            arr.splice(i, 1)
             
-            let sub = arr[i] - minValue
+            // decrementing i
+            i -= 1
             
-            if(sub == 0){
-               arr.splice(i, 1)
-               i -= 1
-            }else{
-                arr[i] = sub
-            }
-            console.log("check i", i)
+        // else assigning sub value to arr[i]    
+        }else{
+           arr[i] = sub 
         }
     }
-    return sizeOfArray
+    }
+    // Returning each iteration of arr.length after breaking out of for-loop
+    return emptyArr
 }

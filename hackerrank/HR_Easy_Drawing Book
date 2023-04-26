@@ -1,0 +1,10 @@
+function pageCount(n, p) {
+  var frontFlip = Math.floor(p/2);
+  var backFlip = Math.floor((n/2)-frontFlip);
+  
+  console.log("check n",n,"p",p)
+  console.log("check frontFlip=Math.floor", frontFlip, "backFlip", backFlip)
+  
+//   var result = Math.min(frontFlip, backFlip);
+//   return result;
+}
