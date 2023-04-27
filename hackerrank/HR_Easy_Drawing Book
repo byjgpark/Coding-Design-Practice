@@ -7,4 +7,5 @@ function pageCount(n, p) {
   
 //   var result = Math.min(frontFlip, backFlip);
 //   return result;
+
 }
