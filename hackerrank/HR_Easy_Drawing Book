@@ -4,6 +4,7 @@ function pageCount(n, p) {
   
   console.log("check n",n,"p",p)
   console.log("check frontFlip=Math.floor", frontFlip, "backFlip", backFlip)
+  
 
   
 //   var result = Math.min(frontFlip, backFlip);
