@@ -10,7 +10,7 @@ function jumpingOnClouds(c) {
         }
         // if the value of c[i] && c[i+2] are 0 & 0
         else if(c[i] == 0 && c[i+2] == 0){
-            
+             
             // increment the value of i by 1 
             i++
             // increment the value of jump by 1
