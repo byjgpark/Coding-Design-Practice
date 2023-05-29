@@ -1,5 +1,8 @@
 function countingValleys(steps, path){
     // Write your code here
+    
+    console.log("check steps", steps, "path", path)
+    
     let strArr = path.split('')
     
     console.log("hey check strArr", strArr)
@@ -10,17 +13,17 @@ function countingValleys(steps, path){
         
         console.log('check here', strArr[step].toLowerCase())
         
-        if(count == 0 && strArr[step].toLowerCase() == 'd'){
+        if(count == 0 && strArr[step].toLowerCase() == 'd')
+        {
             count -= 1
             console.log("hey check count", count)
             result += 1
             console.log("check result", result)
-        // }else if(strArr[step].toLowerCase() == 'd'){
-        //     count -= 1
-        // }else {
-        //     count += 1
-        // }
+        }else if(strArr[step].toLowerCase() == 'd'){
+            count -= 1
+        }else {
+            count += 1
+        }
     }
     return result
-}
 }
