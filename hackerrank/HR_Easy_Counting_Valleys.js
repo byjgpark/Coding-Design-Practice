@@ -5,6 +5,7 @@ function countingValleys(steps, path){
     
     let strArr = path.split('')
     
+    
     console.log("hey check strArr", strArr)
     
     let count = 0
