@@ -8,6 +8,7 @@ function countingValleys(steps, path){
             elevation--;
             console.log("check elevation in D :", elevation,"check valley :", valley)
         }else{
+            console.log("check elevation in U :", elevation,"before D")
             if(elevation == -1){
                 console.log("check elevation in elevation == -1 :", elevation)
                 valley++;
