@@ -13,6 +13,7 @@ function timeConversion(s) {
     //     (time[0] == 12 ? '12' : Number(time[0]) + 12) :
     //     (time[0] == 12 ? '00' : time[0]))    
         
+
     
     return time.join(':');
 }
