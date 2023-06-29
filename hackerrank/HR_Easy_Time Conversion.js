@@ -1,20 +1,31 @@
 function timeConversion(s) {
-    // Write your code here
-    
-    console.log("check s", s)
-    
-    const time = s.slice(0,8).split(':');
 
-    arr[0] = (s.indexOf('PM') > -1) ?
-        (time[0] == 12 ? '12' : NUmber(time[0]) + 12) :
-        (time[0] == 12 ? '00' : time[0]);
-        
-    // console.log("check arr[0]", arr[0] = (s.indexOf('PM') > -1) ?
-    //     (time[0] == 12 ? '12' : Number(time[0]) + 12) :
-    //     (time[0] == 12 ? '00' : time[0]))    
-        
-
+    // 1. 12 AM -> 00
+    // 2. 1 AM to 12 PM -> do nothing
+    // 3. 1 PM To 11 PM -> add 12 to hours
     
+    let firstLetterHour = s.charAt(8)
+    let militaryTIme = ''
+    
+    // AM
+    if(firstLetterHour === 'A'){
+    
+        if(s.substring(0,2) === '12'){
+            militaryTIme = '00'
+        }
+        else{
+            militaryTIme = s.substring(0,2)
+        }
+    }
+    // PM
+    else{
+        if(s.substring(0,2) === '12'){
+              militaryTIme = s.substring(0,2)
+        }
+        else{
+            militaryTIme = parseInt(s.substring(0,2), 10) + 12
+        }
+    }
 
-    return time.join(':');
+    return militaryTIme + s.substring(2,8)
 }
