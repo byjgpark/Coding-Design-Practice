@@ -3,5 +3,6 @@ function getTotalX(a, b) {
 
   
   
+  
   console.log("Check a", a, "check b", b);
 }
