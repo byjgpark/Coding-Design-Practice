@@ -5,9 +5,7 @@ function countApplesAndOranges(s, t, a, b, apples, oranges) {
    
      let appleCount = 0;
      let organgeCount = 0;
-     
-     //console.log("check s",s,"t", t, "a",a, "b", b, "apple", apples, "oranges", oranges)
-     
+      
      for( let i = 0; i <= apples.length; i++){
              
          if( a + apples[i] >= s && a + apples[i] <= t){
