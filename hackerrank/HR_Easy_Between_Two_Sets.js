@@ -24,4 +24,4 @@ function lcm(x, y){
     return (x * y) / gcd(x, y); 
 }
 
- // starts to understand the question day2 
+ // starts to understand the question day4
