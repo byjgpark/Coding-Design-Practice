@@ -1,27 +1,28 @@
+function getGCD(n1, n2) {
+  return n2 === 0 ? n1 : getGCD(n2, n1 % n2);
+}
+
+function getLCM(n1, n2) {
+  return n1 === 0 || n2 === 0 ? 0 : Math.abs(n1 * n2) / getGCD(n1, n2);
+}
+
 function getTotalX(a, b) {
-    // Write your code here
-    console.log("Check here gcd : ", gcd(75,25));
-    
-    console.log("Check here lcm : ", lcm(75,25));
-    
-    console.log("check % = ", 75%25)
-}
-
-function gcd(x, y) {
-    
-  x = Math.abs(x);
-  y = Math.abs(y);
-  
-  while(y) {
-    var t = y;
-    y = x % y;
-    x = t;
+  let lcm = a[0];
+  for (const num of a) {
+    lcm = getLCM(lcm, num);
   }
-  return x;
-}
 
-function lcm(x, y){
-    return (x * y) / gcd(x, y); 
-}
+  let gcd = b[0];
+  for (const num of b) {
+    gcd = getGCD(gcd, num);
+  }
 
- // starts to understand the question day4
+  let count = 0;
+  for (let multiple = lcm; multiple <= gcd; multiple += lcm) {
+    if (gcd % multiple === 0) {
+      count++;
+    }
+  }
+
+  return count;
+}
