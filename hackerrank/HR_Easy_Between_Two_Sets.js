@@ -26,4 +26,30 @@ function getTotalX(a, b) {
   console.log("check getLCM ", getLCM(2,4));
   
   console.log("check getGCD ", getGCD(16, 32));
+  
+  let result = 0;
+  
+  let lcm = a[0];
+  
+  for(let i = 0; i < a.length; i++){
+      lcm = getLCM(lcm, a[i])
+  }
+  
+  let gcd = b[0]
+  
+  for(let j = 0; j < b.length; j++){
+      gcd = getGCD(gcd, b[j])
+  }
+  
+  let multiple = 0;
+  while(multiple <= gcd){
+      multiple += lcm;
+      
+      if(gcd % multiple == 0){
+          result++
+      }
+      
+  }
+  
+  return result;
 }
