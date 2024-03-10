@@ -1,17 +1,17 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-    
-        arr = []
+        Map = {")": "(", "]": "[", "}": "{"}
+        stack = []
 
-        print("check s", type(s))
-        print("check a list of enumerate(s)", list(enumerate(s)))
+        for c in s:
+            # if c not in Map:
+            #     stack.append(c)
+            #     continue
+            if not stack or stack[-1] != Map[c]:
+                print("check here")
+            
+        #         return False
+        #     stack.pop()
+            # print("check here :", not stack != Map.get(c, None))
 
-        for i in enumerate(s):
-
-            print("check i", i[1])
-            if i[0] == 0:
-                arr.append(i[1])
-
-            print("check first index here",arr[0]) 
-
-        print("check arr", arr)
+        # return not stack
