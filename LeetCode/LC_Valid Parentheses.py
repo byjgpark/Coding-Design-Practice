@@ -1,17 +1,17 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        Map = {")": "(", "]": "[", "}": "{"}
+        closeToOpen = {")": "(", "]": "[", "}": "{"}
         stack = []
 
         for c in s:
-            # if c not in Map:
-            #     stack.append(c)
-            #     continue
-            if not stack or stack[-1] != Map[c]:
-                print("check here")
-            
-        #         return False
-        #     stack.pop()
-            # print("check here :", not stack != Map.get(c, None))
-
-        # return not stack
+            # print("check c", c)
+            if c in closeToOpen:
+                print("check c in closeToOpen :", c)
+                if stack and stack[-1] == closeToOpen[c]:
+                    stack.pop()
+                else:
+                    return False
+            else:
+                stack.append(c)
+        
+        return True if not stack else False
