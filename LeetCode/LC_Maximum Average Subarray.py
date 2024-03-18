@@ -4,29 +4,33 @@ class Solution:
         # 1, find max num til k
         # 2, sliding windiw -> subtracking left pointer and adding right pointer from the sum
         # 3, find the max => find average 
-        L = 0
-        R = k-1
-        maxNum = sum(nums[:k])
+          # Get sum for starting window
+        _sum = sum(nums[:k])
+        max_sum = _sum
 
-        arr = []
+        # Start sliding window
+        start_index = 0
+        end_index = k
 
-        print("check L", L,"R", R)
+        print("check end_index", end_index)
+        print("check len(nums)", len(nums))
+        while end_index < len(nums):
 
-        print("check maxNum", maxNum)
-
-        # while L < R:
-        #     if( R == 5):
-        for element in nums:
-            if( R == k+1):
-                break
-            maxNum -= nums[L]
+            print("check end_index", end_index)
+            print("check len(nums)", len(nums))
             
-            L +=1 
-            R +=1
-            maxNum += nums[R]
-            print("check maxNum", maxNum)
-            arr.append(maxNum)
+            _sum -= nums[start_index]  # Remove previous element
+            start_index += 1
 
+            _sum += nums[end_index]  # Add next element
+            end_index += 1
+
+            print("Check _sum", _sum)
+            print("Check max_sum", max_sum)
+            max_sum = max(max_sum, _sum)  # Update max sum
+
+        # Return the average
+        return max_sum / k
         
 
 
