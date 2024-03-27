@@ -50,6 +50,7 @@ linked_list.append(1)
 linked_list.append(2)
 linked_list.append(3)
 linked_list.prepend(0)
+
 linked_list.display()  # Output: 0 -> 1 -> 2 -> 3 -> None
 linked_list.delete(2)
 linked_list.display()  # Output: 0 -> 1 -> 3 -> None
