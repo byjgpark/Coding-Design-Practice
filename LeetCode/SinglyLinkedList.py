@@ -24,9 +24,11 @@ class LinkedList:
             self.head = new_node
             return
         last_node = self.head
-    
-        print("check last_node.next", last_node.next)
+        
+        print("check last_node", last_node, "|| last_node.next", last_node.next)
+        
         while last_node.next:
+            print("check this last_node.next while-loop")
             last_node = last_node.next
         last_node.next = new_node
 
@@ -51,6 +53,7 @@ class LinkedList:
         current_node = None
 
     def display(self):
+        print("check display self.head", self.head)
         current_node = self.head
         while current_node:
             print(current_node.data, end=" -> ")
@@ -62,7 +65,7 @@ if __name__ == "__main__":
     linked_list = LinkedList()
     linked_list.append(1)
     linked_list.append(2)
-    linked_list.append(3)
+    # linked_list.append(3)
     # linked_list.prepend(0)
     linked_list.display()  # Output: 0 -> 1 -> 2 -> 3 -> None
     # linked_list.delete_node(2)
