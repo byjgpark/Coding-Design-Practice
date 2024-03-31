@@ -15,7 +15,7 @@ class LinkedList:
         return f"self.head : {self.head}"
 
     def append(self, data):
-        print("check data", data)
+        # print("check data", data)
         print("check self.head", self.head)
         new_node = Node(data)
         # print("check new_node :", new_node)
@@ -28,9 +28,12 @@ class LinkedList:
         print("check last_node", last_node, "|| last_node.next", last_node.next)
         
         while last_node.next:
-            print("check this last_node.next while-loop")
+            print("Check last_node.next inside of while-loop :", last_node.next)
+            print("Check last_node.next inside of while-loop :", last_node.next)
             last_node = last_node.next
+            print("Check last_node inside of while-loop :", last_node)
         last_node.next = new_node
+        print("check last_node at the end of function :", last_node)
 
     def prepend(self, data):
         new_node = Node(data)
@@ -65,7 +68,7 @@ if __name__ == "__main__":
     linked_list = LinkedList()
     linked_list.append(1)
     linked_list.append(2)
-    # linked_list.append(3)
+    linked_list.append(3)
     # linked_list.prepend(0)
     linked_list.display()  # Output: 0 -> 1 -> 2 -> 3 -> None
     # linked_list.delete_node(2)
