@@ -1,9 +1,10 @@
 # Online Python compiler (interpreter) to run Python online.
 # Write Python 3 code in this online editor and run it.
 class Node:
-    def __init__(self, data=None):
+    def __init__(self, data):
         self.data = data
         self.next = None
+        
     def __str__(self):
         return f"self.data : {self.data} | self.next : {self.next}"
 
@@ -11,8 +12,8 @@ class LinkedList:
     def __init__(self):
         self.head = None
         
-    def __str__(self):
-        return f"self.head : {self.head}"
+    # def __str__(self):
+    #     return f"self.head : {self.head}"
 
     def append(self, data):
         # print("check data", data)
@@ -20,20 +21,22 @@ class LinkedList:
         new_node = Node(data)
         # print("check new_node :", new_node)
         if not self.head:
-            # print("check not self.head", self.head)
+            print("check not self.head", self.head)
             self.head = new_node
             return
-        last_node = self.head
+        current = self.head
         
-        print("check last_node", last_node, "|| last_node.next", last_node.next)
+        print("check last_node", current, "&&& last_node.next", current.next)
         
-        while last_node.next:
-            print("Check last_node.next inside of while-loop :", last_node.next)
-            print("Check last_node.next inside of while-loop :", last_node.next)
-            last_node = last_node.next
-            print("Check last_node inside of while-loop :", last_node)
-        last_node.next = new_node
-        print("check last_node at the end of function :", last_node)
+        while current.next:
+            print("Check self.head.next inside of while-loop :", current.next)
+            # print("Check self.head inside of while-loop :", self.head)
+            print("Check last_node inside of while-loop :", current)
+            current = current.next
+            print("Check self.head at the end of each iteration inside of  while-loop :", self.head)
+            print("Check last_node at the end of each iteration inside of  while-loop :", current)
+        current.next = new_node
+        print("check self.head at the end of function :", self.head)
 
     def prepend(self, data):
         new_node = Node(data)
@@ -56,7 +59,7 @@ class LinkedList:
         current_node = None
 
     def display(self):
-        print("check display self.head", self.head)
+        # print("check display self.head", self.head)
         current_node = self.head
         while current_node:
             print(current_node.data, end=" -> ")
@@ -70,6 +73,6 @@ if __name__ == "__main__":
     linked_list.append(2)
     linked_list.append(3)
     # linked_list.prepend(0)
-    linked_list.display()  # Output: 0 -> 1 -> 2 -> 3 -> None
+    # linked_list.display()  # Output: 0 -> 1 -> 2 -> 3 -> None
     # linked_list.delete_node(2)
     # linked_list.display()  # Output: 0 -> 1 -> 3 -> None
