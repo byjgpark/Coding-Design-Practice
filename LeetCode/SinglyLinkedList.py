@@ -53,11 +53,18 @@ class LinkedList:
         # Search for the key to be deleted, keep track of the previous node
         prev_node = None
         while current_node and current_node.data != key:
+            # print("Check current_node", current_node)
+            # print("Check current_node.data", current_node.data, "check key", key)
             prev_node = current_node
-            print("Check prev_node", prev_node)
+            # print("Check prev_node", prev_node)
             current_node = current_node.next
-            print("Check current_node", current_node)
+            # print("Check current_node.data", current_node.data, "check key", key)
+            # print("Check current_node.data", current_node.data, "check key", key)
+            print("Check prev_node at the line of while-loop : ", prev_node)
+            print("Check current_node at the line of while-loop : ", current_node)
         # If key was not present in linked list
+        
+        # print("Check current_node before the last if-statement : ", current_node)
         if current_node is None:
             return
         # Unlink the node from linked list
@@ -70,10 +77,11 @@ if __name__ == "__main__":
     linkedList.append(1)
     linkedList.append(2)
     linkedList.append(3)
-    linkedList.prepend(0)
+    # linkedList.prepend(0)
     # linkedList.delete(0)
-    linkedList.delete(1)
-    # linkedList.delete(2)
+    # linkedList.delete(1)
+    linkedList.delete(5)
+    # linkedList.delete(3)
     linkedList.display()
     
     
