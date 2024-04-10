@@ -43,32 +43,27 @@ class LinkedList:
         self.head.next = current
         
     def delete(self, key):
-        # print("check self.head", self.head)
+        
         current_node = self.head
-        # If head node itself holds the key to be deleted
+        # Checking the 1st node contain the key 
         if current_node and current_node.data == key:
             self.head = current_node.next
             current_node = None
-            return
-        # Search for the key to be deleted, keep track of the previous node
-        prev_node = None
-        while current_node and current_node.data != key:
-            # print("Check current_node", current_node)
-            # print("Check current_node.data", current_node.data, "check key", key)
-            prev_node = current_node
-            # print("Check prev_node", prev_node)
-            current_node = current_node.next
-            # print("Check current_node.data", current_node.data, "check key", key)
-            # print("Check current_node.data", current_node.data, "check key", key)
-            print("Check prev_node at the line of while-loop : ", prev_node)
-            print("Check current_node at the line of while-loop : ", current_node)
-        # If key was not present in linked list
+            # current_node = None ?? is it necessary 
+            return 
         
-        # print("Check current_node before the last if-statement : ", current_node)
+        previ_node = None
+        # Search for the key to be deleted and keep tracking of the previ node 
+        while current_node and current_node.data != key:
+            previ_node = current_node
+            current_node = current_node.next
+            print("check previ_node : ", previ_node)
+            print("check current_node : ", current_node)
+            
         if current_node is None:
             return
-        # Unlink the node from linked list
-        prev_node.next = current_node.next
+        
+        previ_node.next = current_node.next
         current_node = None
         
 if __name__ == "__main__":
@@ -77,11 +72,12 @@ if __name__ == "__main__":
     linkedList.append(1)
     linkedList.append(2)
     linkedList.append(3)
-    # linkedList.prepend(0)
+    linkedList.prepend(0)
     # linkedList.delete(0)
     # linkedList.delete(1)
-    linkedList.delete(5)
+    # linkedList.delete(2)
     # linkedList.delete(3)
+    linkedList.delete(5)
     linkedList.display()
     
     
