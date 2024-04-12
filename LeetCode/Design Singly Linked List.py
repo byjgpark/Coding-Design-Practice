@@ -5,7 +5,7 @@ class ListNode:
         self.next = next_node
     
     def __str__(self):
-        return f"Check self.data : {self.val} || self.next : {self.next}"    
+        return f"self.data : {self.val} || self.next : {self.next}"    
 
 # Implementation for Singly Linked List
 class LinkedList:
@@ -37,16 +37,18 @@ class LinkedList:
         # print("self.head.next :", self.head.next)
         new_node.next = self.head.next
         # print("check new_node.next", new_node.next)
-        print("check new_node :", new_node)
+        # print("check new_node :", new_node)
         self.head.next = new_node
         if not new_node.next:  # If list was empty before insertion
             # print("check if not new_node.next :", new_node)
             self.tail = new_node
-        print("check self.tail :", self.tail)
+        # print("check self.tail :", self.tail)
 
     def insertTail(self, val: int) -> None:
+        # print("check self.tail", self.tail)
         self.tail.next = ListNode(val)
         self.tail = self.tail.next
+        # print("check self.tail at the end of insertTail :",self.tail)
 
     def remove(self, index: int) -> bool:
         i = 0
@@ -54,19 +56,25 @@ class LinkedList:
         while i < index and curr:
             i += 1
             curr = curr.next
+            
         
         # Remove the node ahead of curr
         if curr and curr.next:
+            print("check curr :", curr)
+            print("check.next :", curr.next)
             if curr.next == self.tail:
                 self.tail = curr
             curr.next = curr.next.next
             return True
+            
         return False
 
     def getValues(self) -> List[int]:
+        # print("check self.head", self.head)
         curr = self.head.next
         res = []
         while curr:
+            # print("check curr", curr)
             res.append(curr.val)
             curr = curr.next
         return res
