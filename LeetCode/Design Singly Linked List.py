@@ -21,6 +21,7 @@ class LinkedList:
         # print("check self.tail", self.tail)
         curr = self.head
         i = 0
+        # print("check curr" + curr)
         while curr:
             if i == index:
                 return curr.val
@@ -53,6 +54,10 @@ class LinkedList:
     def remove(self, index: int) -> bool:
         i = 0
         curr = self.head
+
+        print("check curr from remove : ",curr)
+        # print("check index :",index, "| i :",i)
+        print("check i :",i, "| index :",index)
         while i < index and curr:
             i += 1
             curr = curr.next
@@ -60,17 +65,19 @@ class LinkedList:
         
         # Remove the node ahead of curr
         if curr and curr.next:
-            print("check curr :", curr)
-            print("check.next :", curr.next)
+            # print("check curr :", curr)
+            # print("check.next :", curr.next)
             if curr.next == self.tail:
                 self.tail = curr
             curr.next = curr.next.next
             return True
-            
+
         return False
 
     def getValues(self) -> List[int]:
+        # print("check curr" + curr)
         # print("check self.head", self.head)
+
         curr = self.head.next
         res = []
         while curr:
