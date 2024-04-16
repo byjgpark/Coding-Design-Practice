@@ -46,35 +46,44 @@ class LinkedList:
         # print("check self.tail :", self.tail)
 
     def insertTail(self, val: int) -> None:
-        # print("check self.tail", self.tail)
+        print("check self.tail =", self.tail)
         self.tail.next = ListNode(val)
+        print("check self.tail in the middle =", self.tail)
+        print("check self.tail.next in the middle =", self.tail.next)
         self.tail = self.tail.next
-        # print("check self.tail at the end of insertTail :",self.tail)
+        print("check self.tail at the end of insertTail =",self.tail)
 
     def remove(self, index: int) -> bool:
         i = 0
         curr = self.head
 
-        print("check curr from remove : ",curr)
+        # print("check curr from remove function : ",curr)
         # print("check index :",index, "| i :",i)
-        print("check i :",i, "| index :",index)
+        # print("check i :",i, "| index :",index)
         while i < index and curr:
             i += 1
             curr = curr.next
+            # print("Check curr i < index : ", curr)
+            # print("check i :",i, "| index :",index)
             
         
         # Remove the node ahead of curr
+        # print("check curr in the while loop :", curr, "&& curr.next :", curr.next)
         if curr and curr.next:
             # print("check curr :", curr)
             # print("check.next :", curr.next)
             if curr.next == self.tail:
+                # print("Check curr.next == self.tail :", curr)
                 self.tail = curr
+            # print("Check curr.next : in the while-loop : ", curr.next)
+            # print("Check curr.next.next : in the while-loop : ", curr.next.next)
             curr.next = curr.next.next
+            # print("Check curr.next : in the while-loop : ", curr.next)
+            # print("Check self.tail : at the end of if-statement : ", self.tail)
             return True
-
         return False
 
-    def getValues(self) -> List[int]:
+    def getValues(self) -> list[int]:
         # print("check curr" + curr)
         # print("check self.head", self.head)
 
@@ -85,3 +94,13 @@ class LinkedList:
             res.append(curr.val)
             curr = curr.next
         return res
+    
+
+if __name__ == "__main__":
+    
+    linkedList = LinkedList()
+    linkedList.insertHead(1)
+    linkedList.insertTail(3)
+    linkedList.insertTail(5)
+    linkedList.remove(2)
+    print("Get Values : ", linkedList.getValues())
