@@ -12,8 +12,8 @@ class LinkedList:
     def __init__(self):
         # Init the list with a 'dummy' node which makes 
         # removing a node from the beginning of list easier.
-        # self.head = ListNode(-1)
-        self.head = None
+        self.head = ListNode(-1)
+        # self.head = None
         self.tail = self.head
     
     def get(self, index: int) -> int:
@@ -30,23 +30,40 @@ class LinkedList:
         return -1  # Index out of bounds or list is empty
 
     def insertHead(self, val: int) -> None:
-
         new_node = ListNode(val)
-        # new_node = self.data : 1 || self.next : None 
+        # self.head = new_node
         print("check new_node :", new_node)
-        print("self.head :", self.head)
-        # print("self.head.next :", self.head.next)
-        new_node = self.head
-        # print("check new_node.next", new_node.next)
-        # print("check new_node :", new_node)
-        self.head = new_node
-        if not new_node:  # If list was empty before insertion
-            # print("check if not new_node.next :", new_node)
+        print("check self.head :", self.head)
+        print("check new_node.next :", new_node.next)
+        print("check self.head.next :", self.head.next)
+        new_node.next = self.head.next
+        self.head.next = new_node
+        if not new_node.next:  # If list was empty before insertion
             self.tail = new_node
+        print("--------------------------------------------------------")
+        # print("Check self.head", self.head)
+        # print("Check new_node.next", new_node.next)        
+        # new_node.next = self.head.next
+        # self.head.next = new_node
+        # if not new_node.next:  # If list was empty before insertion
+        #     self.tail = new_node
+            
+        # new_node = ListNode(val)
+        # # new_node = self.data : 1 || self.next : None 
+        # print("check new_node :", new_node)
+        # print("self.head :", self.head)
+        # # print("self.head.next :", self.head.next)
+        # new_node = self.head
+        # # print("check new_node.next", new_node.next)
+        # # print("check new_node :", new_node)
+        # self.head = new_node
+        # if not new_node:  # If list was empty before insertion
+        #     # print("check if not new_node.next :", new_node)
+        #     self.tail = new_node
         # print("check self.tail :", self.tail)
+        
 
     def insertTail(self, val: int) -> None:
-        
         # print("check self.head", self.head.next)
         # print("check self.tail =", self.tail)
         self.tail.next = ListNode(val)
@@ -83,23 +100,31 @@ class LinkedList:
             return True
         return False
 
-    def getValues(self) -> list[int]:
-        # print("check curr" + curr)
-        # print("check self.head", self.head)
-
-        curr = self.head
-        res = []
-        while curr:
-            # print("check curr", curr)
-            res.append(curr.val)
-            curr = curr.next
-        return res
+    # def getValues(self) -> list[int]:
+    #     # print("check curr" + curr)
+    #     # print("check self.head", self.head)
+    #     # curr = self.head
+    #     # res = []
+    #     # while curr:
+    #     #     # print("check curr", curr)
+    #     #     res.append(curr.val)
+    #     #     curr = curr.next
+    #     # return res        
+    #     #---------------------------------
+    #     curr = self.head.next
+    #     res = []
+    #     while curr:
+    #         res.append(curr.val)
+    #         curr = curr.next
+    #     return res
+       
     
 
 if __name__ == "__main__":
     linkedList = LinkedList()
     linkedList.insertHead(1)
+    linkedList.insertHead(3)
     # linkedList.insertTail(3)
     # linkedList.insertTail(5)
     # linkedList.remove(2)
-    print("Get Values : ", linkedList.getValues())
+    # print("Get Values : ", linkedList.getValues())
