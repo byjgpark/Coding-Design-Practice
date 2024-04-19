@@ -48,6 +48,8 @@ class LinkedList:
         
         self.head.next = current
         
+        print("---------------------------------------------")
+        
     def delete(self, key):
         
         current_node = self.head
