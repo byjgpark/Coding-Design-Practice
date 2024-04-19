@@ -36,9 +36,15 @@ class LinkedList:
     def prepend(self, data):
         newNode = Node(data)
         
+        print("Check newNode", newNode)
+        
         current = self.head
+        
+        print("Check current", current)
     
         self.head = newNode
+        
+        print("Check self.head", self.head)
         
         self.head.next = current
         
@@ -69,15 +75,16 @@ class LinkedList:
 if __name__ == "__main__":
     
     linkedList = LinkedList()
-    linkedList.append(1)
-    linkedList.append(2)
-    linkedList.append(3)
-    linkedList.prepend(0)
+    # linkedList.append(1)
+    # linkedList.append(2)
+    # linkedList.append(3)
+    linkedList.prepend(1)
+    linkedList.prepend(2)
     # linkedList.delete(0)
     # linkedList.delete(1)
     # linkedList.delete(2)
     # linkedList.delete(3)
-    linkedList.delete(5)
+    # linkedList.delete(5)
     linkedList.display()
     
     
