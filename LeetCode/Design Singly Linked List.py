@@ -74,10 +74,10 @@ class LinkedList:
         # print("check self.tail at the end of insertTail =",self.tail)
 
     def remove(self, index: int) -> bool:
+        
         i = 0
         curr = self.head
-
-        # print("check curr from remove function : ",curr)
+        print("check curr from remove function : ",curr)
         # print("check index :",index, "| i :",i)
         # print("check i :",i, "| index :",index)
         while i < index and curr:
@@ -88,6 +88,9 @@ class LinkedList:
             
         # Remove the node ahead of curr
         if curr and curr.next:
+            print("Check curr of curr and curr.next :", curr)
+            print("Check curr.next of curr and curr.next :", curr.next)
+            print("Check curr.next.next of curr and curr.next :", curr.next.next)
             # print("check curr :", curr)
             # print("check.next :", curr.next)
             if curr.next == self.tail:
@@ -95,10 +98,14 @@ class LinkedList:
                 self.tail = curr
             # print("Check curr.next : in the while-loop : ", curr.next)
             # print("Check curr.next.next : in the while-loop : ", curr.next.next)
+            # curr.next = curr.next.next
             curr.next = curr.next.next
             # print("Check curr.next : in the while-loop : ", curr.next)
+            print("Check curr at the end of function :", curr)
             # print("Check self.tail : at the end of if-statement : ", self.tail)
+            print("Check self.head : at the end of if-statement : ", self.head)
             return True
+        # print("checking false statement here")
         return False
 
     def getValues(self) -> list[int]:
@@ -127,7 +134,7 @@ if __name__ == "__main__":
     linkedList.insertHead(1)
     linkedList.insertHead(0)
     linkedList.insertTail(9)
-    linkedList.insertTail(4)
-    linkedList.insertTail(2)
-    linkedList.remove(2)
+    # linkedList.insertTail(4)
+    # linkedList.insertTail(2)
+    linkedList.remove(1)
     print("Get Values : ", linkedList.getValues())
