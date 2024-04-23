@@ -4,8 +4,8 @@ class ListNode:
         self.val = val
         self.next = next_node
     
-    def __str__(self):
-        return f"self.data : {self.val} || self.next : {self.next}"    
+    # def __str__(self):
+    #     return f"self.data : {self.val} || self.next : {self.next}"    
 
 # Implementation for Singly Linked List
 class LinkedList:
@@ -77,7 +77,8 @@ class LinkedList:
         
         i = 0
         curr = self.head
-        # print("check curr from remove function : ",curr)
+        print("check self.head :",self.head)
+        print("check curr from remove function : ",curr)
         # print("check index :",index, "| i :",i)
         # print("check i :",i, "| index :",index)
         while i < index and curr:
@@ -88,9 +89,9 @@ class LinkedList:
             
         # Remove the node ahead of curr
         if curr and curr.next:
-            print("Before Check curr of curr and curr :", curr)
-            print("Before Check curr of curr and curr.next :", curr.next)
-            print("Before Check curr.next of curr and curr.next.next :", curr.next.next)
+            # print("Before Check curr of curr and curr :", curr)
+            # print("Before Check curr of curr and curr.next :", curr.next)
+            # print("Before Check curr.next of curr and curr.next.next :", curr.next.next)
             # print("Check curr.next.next of curr and curr.next :", curr.next.next)
             # print("check curr :", curr)
             # print("check.next :", curr.next)
@@ -100,9 +101,9 @@ class LinkedList:
             # print("Check curr.next : in the while-loop : ", curr.next)
             # print("Check curr.next.next : in the while-loop : ", curr.next.next)
             print("------------------------------------------------------------------------------------")
-            # curr.next = curr.next.next
-            curr = curr.next
-            print("After Check curr of curr and curr :", curr)
+            curr.next = curr.next.next
+            # curr = curr.next
+            # print("After Check curr of curr and curr :", curr)
             # print("After Check curr.next of curr and curr.next :", curr.next)
             # print("After Check curr.next.next of curr and curr.next :", curr.next.next)
             # print("Check curr.next : in the while-loop : ", curr.next)
@@ -124,7 +125,7 @@ class LinkedList:
     #     # return res        
     #     #---------------------------------
     
-        print("Check self.head :", self.head)
+        print("Check self.head from the getValues :", self.head)
         
         curr = self.head
         # print("Check curr", )
