@@ -77,20 +77,21 @@ class LinkedList:
         
         i = 0
         curr = self.head
-        print("check curr from remove function : ",curr)
+        # print("check curr from remove function : ",curr)
         # print("check index :",index, "| i :",i)
         # print("check i :",i, "| index :",index)
         while i < index and curr:
             i += 1
             curr = curr.next
-            print("Check curr i < index : ", curr)
+            # print("Check curr i < index : ", curr)
             # print("check i :",i, "| index :",index)
             
         # Remove the node ahead of curr
         if curr and curr.next:
-            print("Check curr of curr and curr.next :", curr)
-            print("Check curr.next of curr and curr.next :", curr.next)
-            print("Check curr.next.next of curr and curr.next :", curr.next.next)
+            print("Before Check curr of curr and curr :", curr)
+            print("Before Check curr of curr and curr.next :", curr.next)
+            print("Before Check curr.next of curr and curr.next.next :", curr.next.next)
+            # print("Check curr.next.next of curr and curr.next :", curr.next.next)
             # print("check curr :", curr)
             # print("check.next :", curr.next)
             if curr.next == self.tail:
@@ -98,12 +99,15 @@ class LinkedList:
                 self.tail = curr
             # print("Check curr.next : in the while-loop : ", curr.next)
             # print("Check curr.next.next : in the while-loop : ", curr.next.next)
+            print("------------------------------------------------------------------------------------")
             # curr.next = curr.next.next
-            curr.next = curr.next.next
+            curr = curr.next
+            print("After Check curr of curr and curr :", curr)
+            # print("After Check curr.next of curr and curr.next :", curr.next)
+            # print("After Check curr.next.next of curr and curr.next :", curr.next.next)
             # print("Check curr.next : in the while-loop : ", curr.next)
-            print("Check curr at the end of function :", curr)
-            # print("Check self.tail : at the end of if-statement : ", self.tail)
-            print("Check self.head : at the end of if-statement : ", self.head)
+            # print("Check curr at the end of function :", curr)
+            # print("Check self.head : at the end of if-statement : ", self.head)
             return True
         # print("checking false statement here")
         return False
@@ -119,6 +123,9 @@ class LinkedList:
     #     #     curr = curr.next
     #     # return res        
     #     #---------------------------------
+    
+        print("Check self.head :", self.head)
+        
         curr = self.head
         # print("Check curr", )
         res = []
