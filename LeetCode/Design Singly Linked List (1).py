@@ -28,21 +28,44 @@ class LinkedList:
         self.tail = self.tail.next
         
     def remove(self, index: int) -> bool:
-        
         curr = self.head
         i = 0
         while i < index:
-            curr = curr.next
             i+=1
+            previ = curr
+            curr = curr.next
         
-        print("check self.head", self.head)
-        print("check curr", curr)
+        print("check self.head :", self.head)
+        print("check curr :", curr)
         
-        self.head.next = curr.next
+        # print("Check previ", previ)
         
-        print("after check self.head", self.head)
-        # while curr:
-            # print("hey check here")
+        # print("check ")
+        
+        # previ.next = previ.next.next
+        
+        # self.head
+    
+    # def remove(self, index: int) -> bool:
+    #     i = 0
+    #     curr = self.head
+        
+    #     print("check self.head", self.head)
+        
+    #     while i < index and curr:
+    #         i += 1
+    #         curr = curr.next
+        
+    #     print("check curr :", curr)
+    #     # Remove the node ahead of curr
+    #     if curr and curr.next:
+    #         if curr.next == self.tail:
+    #             self.tail = curr
+    #         curr.next = curr.next.next
+    #         return True
+    #     return False
+    
+        
             
             
         
@@ -68,5 +91,5 @@ if __name__ == "__main__":
     # linkedList.insertTail(9)
     # linkedList.insertTail(4)
     # linkedList.insertTail(2)
-    linkedList.remove(2)
+    linkedList.remove(1)
     print("Get Values : ", linkedList.getValues())
