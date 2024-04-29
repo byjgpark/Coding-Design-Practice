@@ -10,7 +10,6 @@ class Node:
         return f"Check self.data : {self.data} || self.next : {self.next}"    
 
 class LinkedList:
-    
     def __init__(self):
         self.head = None
 
@@ -36,15 +35,9 @@ class LinkedList:
     def prepend(self, data):
         newNode = Node(data)
         
-        print("Check newNode", newNode)
-        
         current = self.head
-        
-        print("Check current", current)
     
         self.head = newNode
-        
-        print("Check self.head", self.head)
         
         self.head.next = current
         

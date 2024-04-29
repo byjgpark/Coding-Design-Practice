@@ -15,7 +15,6 @@ class LinkedList:
     # def get(self, index: int) -> int:
         
     def insertHead(self, val: int) -> None:
-        
         new_node = Node(val)
         new_node.next = self.head.next
         self.head.next = new_node
@@ -32,44 +31,41 @@ class LinkedList:
         i = 0
         while i < index:
             i+=1
-            previ = curr
+            # previ = curr
+            curr = curr.next
+        print("check curr :", curr)
+        curr.next = curr.next.next
+        
+    #     # print("check self.head :", self.head)
+    
+        
+    #     # print("Check previ", previ)
+        
+    #     # print("check ")
+        
+    #     # previ.next = previ.next.next
+        
+    #     # self.head
+    
+    def remove(self, index: int) -> bool:
+        i = 0
+        curr = self.head
+        
+        print("check self.head", self.head)
+        
+        while i < index and curr:
+            i += 1
             curr = curr.next
         
-        print("check self.head :", self.head)
         print("check curr :", curr)
-        
-        # print("Check previ", previ)
-        
-        # print("check ")
-        
-        # previ.next = previ.next.next
-        
-        # self.head
+        # Remove the node ahead of curr
+        if curr and curr.next:
+            if curr.next == self.tail:
+                self.tail = curr
+            curr.next = curr.next.next
+            return True
+        return False
     
-    # def remove(self, index: int) -> bool:
-    #     i = 0
-    #     curr = self.head
-        
-    #     print("check self.head", self.head)
-        
-    #     while i < index and curr:
-    #         i += 1
-    #         curr = curr.next
-        
-    #     print("check curr :", curr)
-    #     # Remove the node ahead of curr
-    #     if curr and curr.next:
-    #         if curr.next == self.tail:
-    #             self.tail = curr
-    #         curr.next = curr.next.next
-    #         return True
-    #     return False
-    
-        
-            
-            
-        
-
     def getValues(self) -> list[int]:
         # print("check self.head", self.head)
         curr = self.head

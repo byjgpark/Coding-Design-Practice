@@ -83,11 +83,12 @@ class LinkedList:
         # print("check self.tail at the end of insertTail =",self.tail)
         print("check self.tail at the end of insertTail =",self.tail)
 
+    
     def remove(self, index: int) -> bool:
         
         i = 0
+        # prev = self.head
         curr = self.head
-        print("check self.head :",self.head)
         # print("check self.head :",self.head)
         print("check curr from remove function : ",curr)
         # print("check index :",index, "| i :",i)
@@ -101,37 +102,31 @@ class LinkedList:
             
         print("------------------------------------------------------------------------------------")
         
-        print("Before if-statement prev :", prev)
+        # print("Before if-statement prev :", prev)
         print("Before curr if-statement prev :", curr)
         print("before curr.next if-statement Check curr of curr and curr :", curr.next)
         
         # Remove the node ahead of curr
-        if curr and curr.next:
-            # print("Before Check curr of curr and curr :", curr)
-            # print("Before Check curr of curr and curr.next :", curr.next)
-        # if curr:
-        #     print("Before Check prev of curr and curr :", prev)
-        #     print("Before Check curr of curr and curr.next :", curr)
-        #     print("Before Check curr.next of curr and curr.next :", curr.next)
-        #     print("Before self.tail of curr and curr.next :", self.tail)
-        #     # print("Before Check curr.next of curr and curr.next.next :", curr.next.next)
-        #     # print("Check curr.next.next of curr and curr.next :", curr.next.next)
-        #     # print("check curr :", curr)
-        #     # print("check.next :", curr.next)
-        #     if curr.next == self.tail:
-            # if curr == self.tail:
-            #     print("check this if-statement gets executed")
-            #     # print("Check curr.next == self.tail :", curr)
-            #     self.tail = curr
-            #     self.tail = prev
-            # # print("Check curr.next : in the while-loop : ", curr.next)
-            # # print("Check curr.next.next : in the while-loop : ", curr.next.next)
-            # print("------------------------------------------------------------------------------------")
-            # curr.next = curr.next.next
-            print("Right Before Check prev of curr and curr :", prev)
+        if curr:
+            # print("Before Check prev of curr and curr :", prev)
+            print("Before Check curr of curr and curr.next :", curr)
+            print("Before Check curr.next of curr and curr.next :", curr.next)
+            print("Before self.tail of curr and curr.next :", self.tail)
+            # print("Before Check curr.next of curr and curr.next.next :", curr.next.next)
+            # print("Check curr.next.next of curr and curr.next :", curr.next.next)
+            # print("check curr :", curr)
+            # print("check.next :", curr.next)
+            if curr == self.tail:
+                print("check this if-statement gets executed")
+                # print("Check curr.next == self.tail :", curr)
+                self.tail = prev
+            # print("Check curr.next : in the while-loop : ", curr.next)
+            # print("Check curr.next.next : in the while-loop : ", curr.next.next)
+            print("------------------------------------------------------------------------------------")
+            # print("Right Before Check prev of curr and curr :", prev)
             print("Right Before Check curr.next of curr and curr.next :", curr.next)
             prev.next = curr.next
-            print("Right After Check prev of curr and curr :", prev)
+            # print("Right After Check prev of curr and curr :", prev)
             print("After check curr.next :",curr)
             print("After check curr.next.next :",curr.next)
             # curr = curr.next
