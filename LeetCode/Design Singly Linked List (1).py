@@ -29,12 +29,26 @@ class LinkedList:
     def remove(self, index: int) -> bool:
         curr = self.head
         i = 0
-        while i < index:
+        while i < index and curr:
             i+=1
             # previ = curr
             curr = curr.next
-        print("check curr :", curr)
-        curr.next = curr.next.next
+            
+        # print("check before curr :", curr)
+        # print("check curr.next :", curr.next)
+        # print("check curr.next.next :", curr.next.next)
+        
+        if curr and curr.next:
+            curr.next = curr.next.next
+            print("check curr after curr.next :", curr)
+            if not curr.next:
+                self.tail = curr
+            return True
+        return False
+
+             
+        print("check curr.next :", curr.next)
+        print("check head.tail :", self.tail)
         
     #     # print("check self.head :", self.head)
     
@@ -47,24 +61,24 @@ class LinkedList:
         
     #     # self.head
     
-    def remove(self, index: int) -> bool:
-        i = 0
-        curr = self.head
+    # def remove(self, index: int) -> bool:
+    #     i = 0
+    #     curr = self.head
         
-        print("check self.head", self.head)
+    #     print("check remove self.tail", self.tail)
         
-        while i < index and curr:
-            i += 1
-            curr = curr.next
+    #     while i < index and curr:
+    #         i += 1
+    #         curr = curr.next
         
-        print("check curr :", curr)
-        # Remove the node ahead of curr
-        if curr and curr.next:
-            if curr.next == self.tail:
-                self.tail = curr
-            curr.next = curr.next.next
-            return True
-        return False
+    #     print("check curr :", curr)
+    #     # Remove the node ahead of curr
+    #     if curr and curr.next:
+    #         if curr.next == self.tail:
+    #             self.tail = curr
+    #         curr.next = curr.next.next
+    #         return True
+    #     return False
     
     def getValues(self) -> list[int]:
         # print("check self.head", self.head)
@@ -87,5 +101,6 @@ if __name__ == "__main__":
     # linkedList.insertTail(9)
     # linkedList.insertTail(4)
     # linkedList.insertTail(2)
-    linkedList.remove(1)
+    # print("Check remove func", linkedList.remove(0))
+    # linkedList.remove(0)
     print("Get Values : ", linkedList.getValues())
