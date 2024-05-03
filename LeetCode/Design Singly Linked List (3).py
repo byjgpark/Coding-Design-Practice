@@ -23,28 +23,64 @@ class LinkedList:
         new_node.next = curr.next
         curr.next = new_node
         
-        print("check curr", curr)
-        print("check self.tail", self.tail)
-        
-        print("--------------------------------------------------------------------------------------------------------------------------------")
+        # print("check curr :", curr)
+        # print("check new_node :", new_node)
+        if not curr.next.next:
+            self.tail = curr.next
+        # print("check curr.next :", curr.next)
+        # print("check self.tail :", self.tail)
+        # print("--------------------------------------------------------------------------------------------------------------------------------")
         # print("Check new node", new_node)
         # print("check curr", curr)
+    
+    def insertTail(self, val: int) -> None:
         
+        # print("Check self.head from insertTail", self.head)
+        # print("check self.tail from insertTail", self.tail)
         
+        self.tail.next = Node(val)
+        self.tail = self.tail.next
+        # print("check self from insertTail", self.head)
+        # print("Check self.head", self.head)
         
+    def remove(self, index: int) -> bool:
         
+        curr = self.head
+        i = 0
+        while i < index and curr:
+            curr = curr.next
+            i += 1
+        
+        # print("Check curr", curr)
+        print("Aftet Check curr", curr)
+        while curr and curr.next:
+            curr.next = curr.next.next
+            
+            if not curr.next:
+                self.tail = curr
+                print("Check self.tail", self.tail)
+            return True
+        return False
 
-    # def insertTail(self, val: int) -> None:
+    def getValues(self) -> list[int]:
         
-
-    # def remove(self, index: int) -> bool:
+        print("check self.tail from getValues function :", self.tail)
+        curr = self.head.next
+        arr = []
+        while curr:
+            arr.append(curr.data)
+            curr = curr.next
+        return arr
         
-
-    # def getValues(self) -> List[int]:
-
-
 if __name__ == "__main__": 
     linkedlist = LinkedList()
     linkedlist.insertHead(1)
     linkedlist.insertHead(2)
+    linkedlist.insertHead(4)
+    # linkedlist.insertTail(9)
+    # linkedlist.insertTail(12)
+    # linkedlist.insertTail(25)
+    # linkedlist.insertTail(25)
+    linkedlist.remove(2)
     # linkedlist.insertHead(5)
+    print("check values ", linkedlist.getValues())
