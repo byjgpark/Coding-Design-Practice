@@ -12,12 +12,14 @@ class Solution:
         dummy = ListNode()
         node = dummy
 
-        print("check dummy =", dummy)
         print("check node =", node)
+        print("check dummy =", dummy)
+        print("------------------------------------------------------------------------------------------------------------------------------")
 
         while list1 and list2:
             print("check list1.val =", list1.val)
             print("check list2.val =", list2.val)
+            print("------------------------------------------------------------------------------------------------------------------------------")
             # print("check list1 =", list1)
             if list1.val < list2.val:
                 node.next = list1
@@ -25,15 +27,18 @@ class Solution:
                 print("check node inside of if-statement :", node)
                 print("check dummy inside of if-statement :", dummy)
                 print("check list1 inside of while-loop :",list1)
+                print("------------------------------------------------------------------------------------------------------------------------------")
             else:
                 node.next = list2
                 list2 = list2.next
                 print("check node inside of else-statement :",node)
                 print("check dummy inside of else-statement :", dummy)
                 print("check list2 inside of while-loop :",list2)
-            print("Check node inside of while-loop =", node)
+                print("------------------------------------------------------------------------------------------------------------------------------")
+            print("Check before node inside of while-loop =", node)
             node = node.next
             print("Check node after node = node.next inside of while-loop =", node)
+            print("------------------------------------------------------------------------------------------------------------------------------")
  
         # node.next = list1 or list2
         if list1:
