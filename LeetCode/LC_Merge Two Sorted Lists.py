@@ -52,3 +52,5 @@ class Solution:
         print("Check dummy =", dummy)
 
         return dummy.next
+    
+    # Finished
