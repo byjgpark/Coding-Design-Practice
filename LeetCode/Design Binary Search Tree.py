@@ -3,6 +3,9 @@ class Node():
         self.left = None
         self.right = None
         self.data = data
+    
+    # def __str__(self):
+    #     return f"self.left : {self.left} | self.right : {self.right} | self.data : {self.data}"
 
 def insert(node, value):
     if node is None:
@@ -13,9 +16,9 @@ def insert(node, value):
 def inOrderTraverse(node):
     if node is not None:
         inOrderTraverse(node.left)
+        # print("check node", node)
         print(node.data)
         inOrderTraverse(node.right)
-        
         
 if __name__ == "__main__":
     node = Node(5)
@@ -25,6 +28,7 @@ if __name__ == "__main__":
     node.left.right = Node(4)
     node.right.left = Node(6)
     node.right.right = Node(8)
+    
     
     inOrderTraverse(node)
     
