@@ -1,13 +1,14 @@
 # Binary Search Tree operations in Python
 
-
 # Create a node
 class Node:
     def __init__(self, key):
         self.key = key
         self.left = None
         self.right = None
-
+        
+    def __str__(self):
+        return f"Node key : {self.key} | left : {self.left} | right : {self.right}"
 
 # Inorder traversal
 def inorder(root):
@@ -24,16 +25,27 @@ def inorder(root):
 
 # Insert a node
 def insert(node, key):
+    
+    # print("check node =", node)
 
     # Return a new node if the tree is empty
     if node is None:
         return Node(key)
+    
+    # print("Check node.left = ", node.left)
+    # print("Check node.right = ", node.right)
+    
+    # print("check node.key :", node.key)
 
     # Traverse to the right place and insert the node
     if key < node.key:
         node.left = insert(node.left, key)
+        print("check node.left inside if-statement",node.left)
     else:
         node.right = insert(node.right, key)
+        print("check node.right inside if-statement",node.right)
+        
+    print("--------------------------------------------------------")
 
     return node
 
@@ -47,7 +59,6 @@ def minValueNode(node):
         current = current.left
 
     return current
-
 
 # Deleting a node
 def deleteNode(root, key):
@@ -90,17 +101,19 @@ if __name__ == "__main__":
     root = None
     root = insert(root, 8)
     root = insert(root, 3)
+    # print("check root", root)
     root = insert(root, 1)
     root = insert(root, 6)
-    root = insert(root, 7)
-    root = insert(root, 10)
-    root = insert(root, 14)
-    root = insert(root, 4)
+    # print("check root here", root)
+    # root = insert(root, 7)
+    # root = insert(root, 10)
+    # root = insert(root, 14)
+    # root = insert(root, 4)
 
     print("Inorder traversal: ", end=' ')
     inorder(root)
 
-    print("\nDelete 10")
-    root = deleteNode(root, 10)
-    print("Inorder traversal: ", end=' ')
-    inorder(root)
+    # print("\nDelete 10")
+    # root = deleteNode(root, 10)
+    # print("Inorder traversal: ", end=' ')
+    # inorder(root)

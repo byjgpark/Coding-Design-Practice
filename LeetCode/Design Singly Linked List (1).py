@@ -6,7 +6,7 @@ class Node:
 
     def __str__(self):
         return f"Node's self.data = {self.data} and self.next = {self.next}"
-        
+    
 class LinkedList:
     def __init__(self):
         self.head = Node(-1)
