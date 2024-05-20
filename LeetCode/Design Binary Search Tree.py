@@ -27,6 +27,8 @@ def inorder(root):
 def insert(node, key):
     
     # print("check node =", node)
+    
+    print("Check node at the beginning of function :", node, "&& it's key", key)
 
     # Return a new node if the tree is empty
     if node is None:
@@ -36,14 +38,21 @@ def insert(node, key):
     # print("Check node.right = ", node.right)
     
     # print("check node.key :", node.key)
+    
+    # print("hey check here 123")
+    
+    # print("Check left count :", left)
 
     # Traverse to the right place and insert the node
+    # 1 < 3
     if key < node.key:
         node.left = insert(node.left, key)
         print("check node.left inside if-statement",node.left)
     else:
         node.right = insert(node.right, key)
         print("check node.right inside if-statement",node.right)
+        
+    print("Check node at the end of function :", node)
         
     print("--------------------------------------------------------")
 
@@ -103,7 +112,7 @@ if __name__ == "__main__":
     root = insert(root, 3)
     # print("check root", root)
     root = insert(root, 1)
-    root = insert(root, 6)
+    # root = insert(root, 6)
     # print("check root here", root)
     # root = insert(root, 7)
     # root = insert(root, 10)
