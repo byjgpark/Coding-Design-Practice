@@ -110,7 +110,6 @@ if __name__ == "__main__":
     root = None
     root = insert(root, 8)
     root = insert(root, 3)
-    # print("check root", root)
     root = insert(root, 1)
     # root = insert(root, 6)
     # print("check root here", root)
