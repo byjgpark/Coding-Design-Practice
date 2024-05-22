@@ -17,11 +17,10 @@ def inorder(root):
         inorder(root.left)
 
         # Traverse root
-        print(str(root.key) + "->", end=' ')
+        print(root.key, "->", end=' ')
 
         # Traverse right
         inorder(root.right)
-
 
 # Insert a node
 def insert(node, key):
@@ -33,7 +32,6 @@ def insert(node, key):
     # Return a new node if the tree is empty
     if node is None:
         return Node(key)
-    
     # print("Check node.left = ", node.left)
     # print("Check node.right = ", node.right)
     
