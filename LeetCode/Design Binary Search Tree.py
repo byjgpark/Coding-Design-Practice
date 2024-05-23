@@ -27,7 +27,7 @@ def insert(node, key):
     
     # print("check node =", node)
     
-    print("Check node at the beginning of function :", node, "&& it's key", key)
+    # print("Check node at the beginning of function :", node, "&& it's key", key)
 
     # Return a new node if the tree is empty
     if node is None:
@@ -45,14 +45,16 @@ def insert(node, key):
     # 1 < 3
     if key < node.key:
         node.left = insert(node.left, key)
-        print("check node.left inside if-statement",node.left)
-    else:
+        # print("check node.left inside if-statement",node.left)
+    elif key < node.key:
         node.right = insert(node.right, key)
-        print("check node.right inside if-statement",node.right)
+        # print("check node.right inside if-statement",node.right)
+    elif key == node.key:
+        print("they are same !!!")
         
-    print("Check node at the end of function :", node)
+    # print("Check node at the end of function :", node)
         
-    print("--------------------------------------------------------")
+    # print("--------------------------------------------------------")
 
     return node
 
@@ -109,6 +111,9 @@ if __name__ == "__main__":
     root = insert(root, 8)
     root = insert(root, 3)
     root = insert(root, 1)
+    root = insert(root, 3)
+    
+    print("check root here", root)
     # root = insert(root, 6)
     # print("check root here", root)
     # root = insert(root, 7)
@@ -116,8 +121,8 @@ if __name__ == "__main__":
     # root = insert(root, 14)
     # root = insert(root, 4)
 
-    print("Inorder traversal: ", end=' ')
-    inorder(root)
+    # print("Inorder traversal: ", end=' ')
+    # inorder(root)
 
     # print("\nDelete 10")
     # root = deleteNode(root, 10)
