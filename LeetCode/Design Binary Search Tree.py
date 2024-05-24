@@ -46,7 +46,7 @@ def insert(node, key):
     if key < node.key:
         node.left = insert(node.left, key)
         # print("check node.left inside if-statement",node.left)
-    elif key < node.key:
+    elif key > node.key:
         node.right = insert(node.right, key)
         # print("check node.right inside if-statement",node.right)
     elif key == node.key:
@@ -83,12 +83,19 @@ def deleteNode(root, key):
         root.right = deleteNode(root.right, key)
     else:
         # If the node is with only one child or no child
+        
+        print("Check the root in the else-statement", root)
+        
         if root.left is None:
+            print("Check root in the root.left :", root)
+            print("Check root.right in the root.left :", root.right)
             temp = root.right
             root = None
+            print("Check temp in the root.left :",temp)
             return temp
 
         elif root.right is None:
+            print("Check temp in the root.right :", root.left)
             temp = root.left
             root = None
             return temp
@@ -108,21 +115,26 @@ def deleteNode(root, key):
 if __name__ == "__main__": 
 
     root = None
-    root = insert(root, 8)
-    root = insert(root, 3)
-    root = insert(root, 1)
-    root = insert(root, 3)
+    root = insert(root, 20)
+    root = insert(root, 10)
+    root = insert(root, 30)
+    root = insert(root, 5)
+    root = insert(root, 15)
+    root = insert(root, 35)
+    root = insert(root, 17)
+    # root = insert(root, 3)
     
-    print("check root here", root)
+    # print("check root here", root)
     # root = insert(root, 6)
     # print("check root here", root)
     # root = insert(root, 7)
     # root = insert(root, 10)
     # root = insert(root, 14)
     # root = insert(root, 4)
+    root = deleteNode(root, 15)
 
-    # print("Inorder traversal: ", end=' ')
-    # inorder(root)
+    print("Inorder traversal: ", end=' ')
+    inorder(root)
 
     # print("\nDelete 10")
     # root = deleteNode(root, 10)
