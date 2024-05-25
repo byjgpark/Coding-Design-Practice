@@ -79,8 +79,10 @@ def deleteNode(root, key):
     # Find the node to be deleted
     if key < root.key:
         root.left = deleteNode(root.left, key)
+        print("check root.left in the recursion :", root.right)
     elif(key > root.key):
         root.right = deleteNode(root.right, key)
+        print("check root.right in the recursion :", root.right)
     else:
         # If the node is with only one child or no child
         
@@ -131,7 +133,7 @@ if __name__ == "__main__":
     # root = insert(root, 10)
     # root = insert(root, 14)
     # root = insert(root, 4)
-    root = deleteNode(root, 15)
+    root = deleteNode(root, 17)
 
     print("Inorder traversal: ", end=' ')
     inorder(root)
