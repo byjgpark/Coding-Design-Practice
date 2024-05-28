@@ -62,7 +62,8 @@ def insert(node, key):
 # Find the inorder successor
 def minValueNode(node):
     current = node
-
+    
+    print("check current inside of function :", current)
     print("check current.left inside of function :", current.left)
     # Find the leftmost leaf
     while(current.left is not None):
@@ -82,10 +83,10 @@ def deleteNode(root, key):
     # Find the node to be deleted
     if key < root.key:
         root.left = deleteNode(root.left, key)
-        print("check root.left in the recursion :", root.right)
+        print("check root.left in the recursion :", root)
     elif(key > root.key):
         root.right = deleteNode(root.right, key)
-        print("check root.right in the recursion :", root.right)
+        print("check root.right in the recursion :", root)
     else:
         # If the node is with only one child or no child
         
@@ -107,6 +108,7 @@ def deleteNode(root, key):
         
         print("Check root right before temp varible :", root)
         print("Check root.right right before temp varible :", root.right)
+    
         # If the node has two children,
         # place the inorder successor in position of the node to be deleted
         temp = minValueNode(root.right)
@@ -140,7 +142,7 @@ if __name__ == "__main__":
     root = insert(root, 35)
     root = insert(root, 17)
     root = insert(root, 28)
-    root = insert(root, 13)
+    # root = insert(root, 13)
     # root = insert(root, 3)
     
     # print("check root here", root)
