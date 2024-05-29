@@ -81,14 +81,25 @@ def deleteNode(root, key):
         return root
 
     # Find the node to be deleted
+    
+    # three edge cases when the value is found
+    # 1. its root has only one child or no child
+    # 2. its root has two child
+    # 2.1 find the inorder successor 
+    
+    
+    # 1. 10 < 20 O
+    # 2. 10 < 10 X
     if key < root.key:
         root.left = deleteNode(root.left, key)
         print("check root.left in the recursion :", root)
     elif(key > root.key):
         root.right = deleteNode(root.right, key)
         print("check root.right in the recursion :", root)
+    # when the value is found 
     else:
         # If the node is with only one child or no child
+        
         
         print("Check the root in the else-statement", root)
         
@@ -140,9 +151,9 @@ if __name__ == "__main__":
     root = insert(root, 5)
     root = insert(root, 15)
     root = insert(root, 35)
-    root = insert(root, 17)
+    # root = insert(root, 17)
     root = insert(root, 28)
-    # root = insert(root, 13)
+    
     # root = insert(root, 3)
     
     # print("check root here", root)
