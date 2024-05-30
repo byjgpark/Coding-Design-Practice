@@ -100,7 +100,6 @@ def deleteNode(root, key):
     else:
         # If the node is with only one child or no child
         
-        
         print("Check the root in the else-statement", root)
         
         if root.left is None:
@@ -153,6 +152,8 @@ if __name__ == "__main__":
     root = insert(root, 35)
     # root = insert(root, 17)
     root = insert(root, 28)
+    # root = insert(root, 13)
+    root = insert(root, 17)
     
     # root = insert(root, 3)
     
