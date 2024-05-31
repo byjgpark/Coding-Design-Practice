@@ -92,10 +92,12 @@ def deleteNode(root, key):
     # 2. 10 < 10 X
     if key < root.key:
         root.left = deleteNode(root.left, key)
-        print("check root.left in the recursion :", root)
+        print("check root in the root.left recursion :", root)
+        print("check root.left in the root.left recursion :", root.left)
     elif(key > root.key):
         root.right = deleteNode(root.right, key)
-        print("check root.right in the recursion :", root)
+        print("check root in the recursion :", root)
+        print("check root.right in the root.right recursion :", root.right)
     # when the value is found 
     else:
         # If the node is with only one child or no child
@@ -134,9 +136,9 @@ def deleteNode(root, key):
         # Delete the inorder successor
         root.right = deleteNode(root.right, temp.key)
         
-        print("check root at the end of function :", root)
+    print("check root at the end of function :", root)
         
-        print("check root.right at the end of function :", root.right)
+    print("check root.right at the end of function :", root.right)
 
     return root
 
@@ -145,13 +147,14 @@ if __name__ == "__main__":
 
     root = None
     root = insert(root, 20)
-    root = insert(root, 10)
+    root = insert(root, 10) 
     root = insert(root, 30)
     root = insert(root, 5)
     root = insert(root, 15)
+    root = insert(root, 28)
     root = insert(root, 35)
     # root = insert(root, 17)
-    root = insert(root, 28)
+    
     # root = insert(root, 13)
     root = insert(root, 17)
     
@@ -165,7 +168,7 @@ if __name__ == "__main__":
     # root = insert(root, 14)
     # root = insert(root, 4)
     # root = deleteNode(root, 17)
-    root = deleteNode(root, 10)
+    root = deleteNode(root, 15)
     
     print("Check final root", root)
 
