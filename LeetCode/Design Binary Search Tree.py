@@ -133,6 +133,8 @@ def deleteNode(root, key):
         
         print("check root right before root.right variable :", root)
         
+        print("check root.right right before root.right variable :", root.right)
+        
         # Delete the inorder successor
         root.right = deleteNode(root.right, temp.key)
         
@@ -168,7 +170,7 @@ if __name__ == "__main__":
     # root = insert(root, 14)
     # root = insert(root, 4)
     # root = deleteNode(root, 17)
-    root = deleteNode(root, 15)
+    root = deleteNode(root, 10)
     
     print("Check final root", root)
 

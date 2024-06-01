@@ -28,8 +28,7 @@ class BinarySearch:
         
         if node:
             
-            
-            
+    
             self.inorder(node.left)
             
             # print("check node.left", node)
@@ -37,6 +36,48 @@ class BinarySearch:
             self.inorder(node.right)
             
             print(node.key, "=>", end=" ")
+            
+    def findMinValue(self, node):
+        
+        current = node
+        
+        while not current:         
+             current = node.left
+             
+    
+        
+    
+    # delete 15
+    def delete(self, node, key):
+        
+        if not node:
+            return 
+        
+        if node.key > key:
+            node.left = self.delete(node.left, key)
+        elif node.key < key:
+            node.right = self.delete(node.right, key)
+        else:
+            
+            # if subtree has one node or None
+            if not node.left:
+                temp = node.right
+                node = None
+                return temp
+            
+            elif not node.right:
+                temp = node.left
+                node = None
+                return temp
+            
+            # if subtress has two nodes
+            temp = 
+            
+            
+            
+            
+            
+                 
 
         
 if __name__ == "__main__":
