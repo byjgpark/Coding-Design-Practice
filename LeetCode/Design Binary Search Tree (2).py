@@ -38,20 +38,16 @@ class BinarySearch:
             print(node.key, "=>", end=" ")
             
     def findMinValue(self, node):
-        
         current = node
-        
-        while not current:         
+        while not current.left:         
              current = node.left
-             
-    
+        return current
         
-    
     # delete 15
     def delete(self, node, key):
         
         if not node:
-            return 
+            return Node(key)
         
         if node.key > key:
             node.left = self.delete(node.left, key)
@@ -71,7 +67,14 @@ class BinarySearch:
                 return temp
             
             # if subtress has two nodes
-            temp = 
+            temp = self.findMinValue(node.right)
+            
+            node.key = temp.key
+            
+            node.right = self.delete(node.right, temp.key)
+        return node
+            
+            
             
             
             

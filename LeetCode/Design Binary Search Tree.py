@@ -155,22 +155,11 @@ if __name__ == "__main__":
     root = insert(root, 15)
     root = insert(root, 28)
     root = insert(root, 35)
-    # root = insert(root, 17)
-    
-    # root = insert(root, 13)
     root = insert(root, 17)
+    root = insert(root, 13)
     
-    # root = insert(root, 3)
-    
-    # print("check root here", root)
-    # root = insert(root, 6)
-    # print("check root here", root)
-    # root = insert(root, 7)
-    # root = insert(root, 10)
-    # root = insert(root, 14)
-    # root = insert(root, 4)
-    # root = deleteNode(root, 17)
-    root = deleteNode(root, 10)
+
+    # root = deleteNode(root, 10)
     
     print("Check final root", root)
 
