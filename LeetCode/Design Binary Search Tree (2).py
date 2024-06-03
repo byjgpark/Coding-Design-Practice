@@ -27,19 +27,19 @@ class BinarySearch:
     def inorder(self, node):
         
         if node:
-            
-    
             self.inorder(node.left)
             
             # print("check node.left", node)
             
+            print(node.key, "=>", end=" ")
+            
             self.inorder(node.right)
             
-            print(node.key, "=>", end=" ")
+            # print(node.key, "=>", end=" ")
             
     def findMinValue(self, node):
         current = node
-        while not current.left:         
+        while current.left:         
              current = node.left
         return current
         
@@ -72,31 +72,31 @@ class BinarySearch:
             node.key = temp.key
             
             node.right = self.delete(node.right, temp.key)
+            
         return node
             
             
-            
-            
-            
-            
-            
-                 
-
         
 if __name__ == "__main__":
     
     bs = BinarySearch()
     
     bs.root = None
-    bs.root = bs.insert(bs.root, 8)
-    bs.root = bs.insert(bs.root, 3)
-    bs.root = bs.insert(bs.root, 1)
-    bs.root = bs.insert(bs.root, 4)
-    bs.root = bs.insert(bs.root, 9)
+    bs.root = bs.insert(bs.root, 20)
+    bs.root = bs.insert(bs.root, 10)
+    bs.root = bs.insert(bs.root, 30)
+    bs.root = bs.insert(bs.root, 5)
+    bs.root = bs.insert(bs.root, 15)
+    bs.root = bs.insert(bs.root, 28)
+    bs.root = bs.insert(bs.root, 35)
+    bs.root = bs.insert(bs.root, 17)
+    bs.root = bs.insert(bs.root, 13)
     
     print("Check bs.root", bs.root)
     
-    bs.inorder(bs.root)
+    bs.root = bs.delete(bs.root, 10)
+    
+    print("Check inorder ", bs.inorder( bs.root))
     # linkedList.insertHead(0)
     # linkedList.insertTail(9)
     # linkedList.insertTail(4)

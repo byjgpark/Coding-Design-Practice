@@ -159,7 +159,7 @@ if __name__ == "__main__":
     root = insert(root, 13)
     
 
-    # root = deleteNode(root, 10)
+    root = deleteNode(root, 10)
     
     print("Check final root", root)
 
