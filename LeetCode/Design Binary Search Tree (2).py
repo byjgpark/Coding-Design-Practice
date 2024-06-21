@@ -1,4 +1,3 @@
-
 class Node:
     def __init__(self, key):
         self.key = key
@@ -13,6 +12,8 @@ class BinarySearch:
         self.root = None
        
     def insert(self, node, key) -> object:
+        
+        # print("check node", node)
 
         if not node:
             return Node(key)
@@ -21,6 +22,8 @@ class BinarySearch:
             node.left = self.insert(node.left, key)
         else:    
             node.right = self.insert(node.right, key)
+            
+            print("check node at the end of insert function", node)
             
         return node    
         
@@ -92,7 +95,7 @@ if __name__ == "__main__":
     bs.root = bs.insert(bs.root, 17)
     bs.root = bs.insert(bs.root, 13)
     
-    print("Check bs.root", bs.root)
+    # print("Check bs.root", bs.root)
     
     bs.root = bs.delete(bs.root, 10)
     
