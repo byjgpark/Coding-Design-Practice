@@ -155,7 +155,7 @@ if __name__ == "__main__":
     root = insert(root, 15)
     root = insert(root, 28)
     root = insert(root, 35)
-    root = insert(root, 17)
+    # root = insert(root, 17)
     root = insert(root, 13)
     
 
