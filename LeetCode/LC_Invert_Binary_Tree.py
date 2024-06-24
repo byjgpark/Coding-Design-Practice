@@ -15,6 +15,7 @@ class Solution:
         root.left = root.right
         root.right = tmp
         
+        
         # make 2 recursive calls
         self.invertTree(root.left)
         print("check root.right", root)
