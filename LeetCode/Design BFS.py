@@ -8,7 +8,7 @@ class Node:
         self.right = None
 
 
-# Function to  print level order traversal of tree
+# Function to print level order traversal of tree
 def printLevelOrder(root):
     h = height(root)
     for i in range(1, h+1):
@@ -33,11 +33,15 @@ def height(node):
     if node is None:
         return 0
     else:
-
         # Compute the height of each subtree
-        lheight = height(node.left)
+        # 0
+        lheight = height(node.left) 
+        # 0
         rheight = height(node.right)
-
+        
+        # node 4 -> lheight = 0
+        # node 4 -> rheight = 0
+        
         # Use the larger one
         if lheight > rheight:
             return lheight+1
