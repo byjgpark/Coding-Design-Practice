@@ -10,7 +10,9 @@ class Node:
 
 # Function to print level order traversal of tree
 def printLevelOrder(root):
+    
     h = height(root)
+    # 1,2,3
     for i in range(1, h+1):
         printCurrentLevel(root, i)
 
@@ -60,6 +62,6 @@ if __name__ == '__main__':
     print("Level order traversal of binary tree is -")
     printLevelOrder(root)
     
-    print("check height", height(root))
+    # print("check height", height(root))
 
 # This code is contributed by Nikhil Kumar Singh(nickzuck_007)
