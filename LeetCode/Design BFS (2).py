@@ -26,13 +26,18 @@ class BFS:
         
     def helpPrintBFS(self, root):
         
-        height = height(root)
+        height = self.height(root)
         for i in range(1, height+1):
+            self.printDataBFS(root, i)
             
     def printDataBFS(self, root, height): 
-        
-        
-        
+        if not root:
+            return
+        if height == 1:
+            print(root.data, end='-> ')
+        elif height > 1:
+            self.printDataBFS(root.left, height-1)
+            self.printDataBFS(root.right, height-1) 
         
 if __name__ == "__main__":
 
@@ -47,4 +52,8 @@ if __name__ == "__main__":
     print("check root tree",root)
 
     print("check height of tree :", bts.height(root))
+    
+    bts.helpPrintBFS(root)
+    
+    
     
