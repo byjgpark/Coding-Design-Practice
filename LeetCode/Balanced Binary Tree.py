@@ -8,7 +8,8 @@
 class Solution:
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
 
-        max_diameter = [0]
+        # max_diameter = [0]
+        Flag = [True]
         
         def height(node):
             if not node:
@@ -16,21 +17,35 @@ class Solution:
 
             lheight = height(node.left)
             rheight = height(node.right)
-            
-            diameter = lheight + rheight
 
-            max_diameter[0] = max(max_diameter[0], diameter)
+            print("lheight", lheight,"rheight", rheight)
+            
+            abs_value = abs(lheight - rheight)
+
+            print("check abs_value", abs_value)
+
+            if abs_value > 1:
+                print("checking here")
+                Flag[0] = False
+            # else:
+            #     return False
+
+            # max_diameter[0] = max(max_diameter[0], diameter)
 
             return 1 + max(lheight, rheight)
         
-        height(root)
+        print("check here",height(root))
+        return Flag[0]
 
-        print("check here", max_diameter[0])
+        # return True
+        
 
-        if max_diameter[0] < 4:
-            return True
-        else:
-            return False
+        # print("check here", max_diameter[0])
+
+        # if max_diameter[0] < 4:
+        #     return True
+        # else:
+        #     return False
 
             
 
