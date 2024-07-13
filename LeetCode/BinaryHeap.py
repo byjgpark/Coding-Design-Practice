@@ -7,14 +7,17 @@ class BinaryHeap:
 
     def insert(self, key):
         self.heap.append(key)
+        print("check key", key, "len(self.heap)", len(self.heap)-1, "self.heap", self.heap)
         self._heapify_up(len(self.heap) - 1)
 
     def _heapify_up(self, index):
         parent_index = (index - 1) // 2
+        print("check parent_index : ", parent_index)
         while parent_index >= 0 and self.heap[parent_index] > self.heap[index]:
             self.heap[parent_index], self.heap[index] = self.heap[index], self.heap[parent_index]
             index = parent_index
             parent_index = (index - 1) // 2
+            print("2nd check parent_index", parent_index)
 
     def get_min(self):
         if self.is_empty():
