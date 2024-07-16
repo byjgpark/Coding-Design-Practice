@@ -35,6 +35,7 @@ class BinaryHeap:
         self.heap.pop()
         self._heapify_down(0)
 
+
         return min_value
 
     def _heapify_down(self, index):
