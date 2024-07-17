@@ -29,12 +29,18 @@ class BinaryHeap:
     def delete_min(self):
         if self.is_empty():
             return None
-
+        
+        # find min value 
         min_value = self.heap[0]
+        
+        # assign the last index at the first index
         self.heap[0] = self.heap[-1]
+        print("Check self.heap", self.heap)
+        # pop the duplicate value
         self.heap.pop()
+        print("Check self.heap after popping up", self.heap)
+        # heapify down the min value from the tree 
         self._heapify_down(0)
-
 
         return min_value
 
@@ -75,3 +81,8 @@ if __name__ == "__main__":
     print("Minimum element in the heap after deletion:", heap.get_min())
     
     print("check array heap", heap.heap)
+    
+    arr = [1,2,3,4]
+    
+    arr.pop()
+
