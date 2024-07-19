@@ -72,6 +72,8 @@ if __name__ == "__main__":
     heap.insert(5)
     heap.insert(4)
     heap.insert(45)
+    
+    print("check init heap", heap.heap)
 
     print("Minimum element in the heap:", heap.get_min())
 
@@ -82,7 +84,7 @@ if __name__ == "__main__":
     
     print("check array heap", heap.heap)
     
-    arr = [1,2,3,4]
+    # arr = [1,2,3,4]
     
-    arr.pop()
+    # arr.pop()
 
