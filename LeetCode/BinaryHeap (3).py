@@ -67,7 +67,7 @@ if __name__ == "__main__":
     heap.insert(4)
     heap.insert(45)
 
-    # print("check heap arr ", heap.heap)
+    print("check heap arr ", heap.heap)
     
     print("What is a min-value :", heap.getMinVal())
     

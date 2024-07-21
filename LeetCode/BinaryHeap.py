@@ -7,20 +7,17 @@ class BinaryHeap:
 
     def insert(self, key):
         self.heap.append(key)
-        print("check key", key, "len(self.heap)", len(self.heap)-1, "self.heap", self.heap)
         self._heapify_up(len(self.heap) - 1)
 
     def _heapify_up(self, index):
         parent_index = (index - 1) // 2
-        print("check Int", -1//2)
-        print("check parent_index : ", parent_index)
+
         while parent_index >= 0 and self.heap[parent_index] > self.heap[index]:
             self.heap[parent_index], self.heap[index] = self.heap[index], self.heap[parent_index]
             index = parent_index
-            print("check index inside of while", index)
+        
             parent_index = (index - 1) // 2
-            print("2nd check parent_index", parent_index)
-
+          
     def get_min(self):
         if self.is_empty():
             return None
@@ -35,10 +32,8 @@ class BinaryHeap:
         
         # assign the last index at the first index
         self.heap[0] = self.heap[-1]
-        print("Check self.heap", self.heap)
         # pop the duplicate value
         self.heap.pop()
-        print("Check self.heap after popping up", self.heap)
         # heapify down the min value from the tree 
         self._heapify_down(0)
 
@@ -79,11 +74,8 @@ if __name__ == "__main__":
 
     # Delete minimum element
     print("Deleted minimum element:", heap.delete_min())
-
-    print("Minimum element in the heap after deletion:", heap.get_min())
     
-    print("check array heap", heap.heap)
-    
+    print("after deleting heap.heap: ", heap.heap)
     # arr = [1,2,3,4]
     
     # arr.pop()
