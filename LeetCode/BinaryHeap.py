@@ -72,13 +72,22 @@ if __name__ == "__main__":
     # heap.insert(45)
     
     # Insert elements
-    heap.insert(4)
+    # heap.insert(4)
+    # heap.insert(50)
+    # heap.insert(7)
+    # heap.insert(55)
+    # heap.insert(90)
+    # heap.insert(87)
+    # heap.insert(2)
+    
+    heap.insert(10)
     heap.insert(50)
-    heap.insert(7)
-    heap.insert(55)
+    heap.insert(23)
+    heap.insert(88)
     heap.insert(90)
-    heap.insert(87)
-    heap.insert(2)
+    heap.insert(32)
+    heap.insert(74)
+    heap.insert(80)
     
     print("check init heap", heap.heap)
 

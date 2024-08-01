@@ -30,25 +30,30 @@ class Heap:
         #1 remove the min element
         #2 swap the last element with the first element 
         #3 bubbling down the element
-        last_value = self.heap[-1]
+        # last_value = self.heap[-1]
         self.heap[0] = self.heap[-1]
+        self.heap.pop()
         self.heaplify_down(0)
         
-        
-        print("find last index ", self.heap[-1])
+        return self.heap[0]
+        # print("find last index ", self.heap[-1])
         
     def heaplify_down(self, index):
         
-        parent_index = (index - 1) // 2
-        left_index = (parent_index * 2) + 1
-        right_index = (parent_index * 2) + 2
-        
-        print("check here len :", len(self.heap))
+        left_index = (index * 2) + 1
+        right_index = (index * 2) + 2
+        smallest = index
+        # print("check here len :", len(self.heap))
 
-        if len(self.heap) >= index and self.heap[left_index] < self.heap[index]:
-            self.heap[index], self.heap[left_index] = self.heap[left_index], self.heap[index]
-            # index = 
-              
+        if left_index < len(self.heap) and self.heap[left_index] < self.heap[smallest]:
+            smallest = left_index
+        
+        if right_index < len(self.heap) and self.heap[right_index] < self.heap[smallest]:
+            smallest = right_index
+        
+        if index != smallest:
+            self.heap[index], self.heap[smallest] = self.heap[smallest], self.heap[index]
+            self.heaplify_down(smallest)
             
 
 if __name__=="__main__": 
@@ -64,10 +69,11 @@ if __name__=="__main__":
 
     print("check self.heap", heap.heap)
     
-    print("check heaplify_down ", heap.heaplify_down(0))
+    # print("check heaplify_down ", heap.heaplify_down(0))
     
     print("get min_value", heap.get_minValue())
     
     print("get min_value", heap.remove_minValue())
     
+    print("check after the removal of the first index :", heap.heap)
     # print("hey check here")
