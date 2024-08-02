@@ -8,6 +8,7 @@ class KthLargest:
     def add(self, val: int) -> int:
 
         print("check sort", self.nums)
+        
 
         print("check nums ", sorted(self.nums))
         
