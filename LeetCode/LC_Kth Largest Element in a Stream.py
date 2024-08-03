@@ -12,6 +12,8 @@ class KthLargest:
 
         print("check nums ", sorted(self.nums))
         
+        
+        
 
 
 # Your KthLargest object will be instantiated and called as such:
