@@ -1,8 +1,13 @@
+
+
+
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
         
         L = 0
         R = len(nums) - 1
+        
+        print("check here")
 
         while L <= R:
             
