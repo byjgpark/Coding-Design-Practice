@@ -12,12 +12,13 @@ class Solution:
             # decision to include nums[i]
             subset.append(nums[i])
             
-            ## dfs(1)
+            ## dfs(1), dfs(2)
             dfs(i + 1) 
         
             # decision NOT to include nums[i]
             subset.pop()
-    
+            
+            ## dfs(3)
             dfs(i + 1) 
 
         ## dfs(0)
