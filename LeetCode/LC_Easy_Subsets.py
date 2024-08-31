@@ -18,6 +18,7 @@ class Solution:
             dfs(i + 1)  # Move to the next element
             
             # backtracking process
+    
             print(f"Backtracking from dfs({i + 1}), current subset before pop: {subset}")
             subset.pop()  # Backtrack
             print(f"Excluding nums[{i}] = {nums[i]}, subset after pop: {subset}")
