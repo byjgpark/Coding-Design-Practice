@@ -18,7 +18,7 @@ class Solution:
             # decision to include nums[i]
             subset.append(nums[i])
             print(f"Including nums[{i}] = {nums[i]}, subset now: {subset}")
-            # 
+            # dfs(2)
             dfs(i + 1)  # Move to the next element
         
             # backtracking process
@@ -26,19 +26,21 @@ class Solution:
             print(f"Backtracking from dfs({i + 1}), current subset before pop: {subset}")
             subset.pop()  # Backtrack
             print(f"Excluding nums[{i}] = {nums[i]}, subset after pop: {subset}")
-            
+            print(f"current dfs({i}), current subset after pop: {subset}")
+
             # dfs(1)
             dfs(i + 1)  # Move to the next element without including current element
-            print(f"This is the end of function")
+            print(f"Ending of the recursion function at the dfs({i})")
             
         # Start the DFS with the first element
         # dfs(0)
         dfs(0)
+        print(f"This is the right before the return statement")
         return res
 
 if __name__ == "__main__":
 
-# Example usage:
+    # Example usage:
     solution = Solution()
     nums = [1, 2]
     result = solution.subsets(nums)
