@@ -18,7 +18,7 @@ class Solution:
             # decision to include nums[i]
             subset.append(nums[i])
             print(f"Including nums[{i}] = {nums[i]}, subset now: {subset}")
-            # dfs(2)
+            #  
             dfs(i + 1)  # Move to the next element
         
             # backtracking process
@@ -28,7 +28,7 @@ class Solution:
             print(f"Excluding nums[{i}] = {nums[i]}, subset after pop: {subset}")
             print(f"current dfs({i}), current subset after pop: {subset}")
 
-            # dfs(1)
+            # stop dfs(0) -> stop dfs(1)
             dfs(i + 1)  # Move to the next element without including current element
             print(f"Ending of the recursion function at the dfs({i})")
             
