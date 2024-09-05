@@ -17,7 +17,7 @@ class Solution:
             
             # decision to include nums[i]
             subset.append(nums[i])
-            print(f"Including nums[{i}] = {nums[i]}, subset now: {subset}")
+            print(f"Including nums[{i}] = {nums[i]}, subset now: {subset}" )
             #  
             dfs(i + 1)  # Move to the next element
         
