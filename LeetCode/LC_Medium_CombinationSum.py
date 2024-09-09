@@ -1,4 +1,6 @@
- class Solution:
+from typing import List
+
+class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
         res = []
 
@@ -25,9 +27,12 @@
             # Backtrack by removing the last candidate and exploring the next option
             print(f"Backtracking, removing {cur[-1]} from cur={cur}")
             cur.pop()
+            
+            print(f"current dfs called with i={i}, cur={cur}, total={total}")
 
             # Decision 2: Exclude the current candidate and move to the next
             dfs(i + 1, cur, total)  # Move to the next candidate
+            print(f"ending dfs called with i={i}, cur={cur}, total={total}")
 
         dfs(0, [], 0)  # Initial call
         return res
@@ -35,7 +40,13 @@
 if __name__ == "__main__":
     # Example usage:
     solution = Solution()
-    nums = [1, 2]
-    result = solution.subsets(nums)
-    print(f"Final subsets: {result}")
-
+    
+    # Example input for combinationSum
+    candidates = [2,3,5]
+    target = 8
+    
+    # Call the combinationSum method
+    result = solution.combinationSum(candidates, target)
+    
+    # Print the final result
+    print(f"Final combinations that sum to {target}: {result}")
