@@ -22,6 +22,7 @@ class Solution:
             # Decision 1: Include the current candidate and explore further
             cur.append(candidates[i])
             print(f"Including {candidates[i]}, new cur={cur}, new total={total + candidates[i]}")
+            # [2], [2,2], [2,2,2]
             dfs(i, cur, total + candidates[i])  # Recurse with current candidate
 
             # Backtrack by removing the last candidate and exploring the next option
