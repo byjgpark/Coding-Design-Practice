@@ -13,6 +13,8 @@ class Solution:
                 print(f"Found valid combination: {cur}")
                 res.append(cur.copy())
                 return
+            
+            print("check len(candidates) :", len(candidates))
 
             # If total exceeds target or index is out of bounds, stop exploring this path
             if i >= len(candidates) or total > target:
@@ -22,7 +24,7 @@ class Solution:
             # Decision 1: Include the current candidate and explore further
             cur.append(candidates[i])
             print(f"Including {candidates[i]}, new cur={cur}, new total={total + candidates[i]}")
-            # [2], [2,2], [2,2,2]
+            # i=0 -> [2], [2,2], [2,2,2]
             dfs(i, cur, total + candidates[i])  # Recurse with current candidate
 
             # Backtrack by removing the last candidate and exploring the next option
@@ -32,6 +34,7 @@ class Solution:
             print(f"current dfs called with i={i}, cur={cur}, total={total}")
 
             # Decision 2: Exclude the current candidate and move to the next
+            # i=1 -> [2,2,2]
             dfs(i + 1, cur, total)  # Move to the next candidate
             print(f"ending dfs called with i={i}, cur={cur}, total={total}")
 
@@ -51,3 +54,5 @@ if __name__ == "__main__":
     
     # Print the final result
     print(f"Final combinations that sum to {target}: {result}")
+    
+    # go through the time and space complexity
