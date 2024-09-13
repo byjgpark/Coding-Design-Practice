@@ -56,3 +56,5 @@ if __name__ == "__main__":
     print(f"Final combinations that sum to {target}: {result}")
     
     # space complexity
+    # study space complexity for 50 mins and 10 mins whether to study LeetCode or AI. I will study LeetCode.
+    
