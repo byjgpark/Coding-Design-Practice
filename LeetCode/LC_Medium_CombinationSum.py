@@ -57,4 +57,5 @@ if __name__ == "__main__":
     
     # space complexity
     # study space complexity for 50 mins and 10 mins whether to study LeetCode or AI. I will study LeetCode.
+    # understand the total space complexity
     
