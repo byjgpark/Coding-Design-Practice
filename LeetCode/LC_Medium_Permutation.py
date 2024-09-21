@@ -51,3 +51,4 @@ if __name__ == "__main__":
     nums = [1, 2, 3]
     s.permute(nums)
     # print(s.perm)
+    
