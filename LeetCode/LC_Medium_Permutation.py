@@ -27,28 +27,54 @@ from typing import List
 #         print(f"{indent}Returning res={res}")
 #         return res
 
-class Solution:
-    def permute(self, nums: List[int]) -> List[List[int]]:
-        res = []
+# class Solution:
+#     def permute(self, nums: List[int]) -> List[List[int]]:
+#         res = []
 
-        # base case
-        if len(nums) == 1:
-            return [nums[:]]  # nums[:] is a deep copy
+#         # base case
+#         if len(nums) == 1:
+#             return [nums[:]]  # nums[:] is a deep copy
 
-        for i in range(len(nums)):
-            n = nums.pop(0)
-            perms = self.permute(nums)
+#         for i in range(len(nums)):
+#             n = nums.pop(0)
+#             perms = self.permute(nums)
 
-            for perm in perms:
-                perm.append(n)
-            res.extend(perms)
-            nums.append(n)
-        return res
+#             for perm in perms:
+#                 perm.append(n)
+#             res.extend(perms)
+#             nums.append(n)
+#         return res
 
     
-if __name__ == "__main__":
-    s = Solution()
-    nums = [1, 2, 3]
-    s.permute(nums)
-    # print(s.perm)
+# if __name__ == "__main__":
+#     s = Solution()
+#     nums = [1, 2, 3]
+#     s.permute(nums)
+#     # print(s.perm)
+
+
+class Solution:
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        n = len(nums)
+        ans, sol = [], []
+
+        def backtrack():
+            if len(sol) == n:
+                ans.append(sol[:])
+                return
+
+            for x in nums:
+                if x not in sol:
+                    sol.append(x)
+                    backtrack()
+                    sol.pop()
+
+        backtrack()
+        return ans
+
+# Time Complexity: O(n!)
+# Space Complexity: O(n)
+
+
+
     
