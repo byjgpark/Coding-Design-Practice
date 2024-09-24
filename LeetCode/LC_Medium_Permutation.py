@@ -56,9 +56,9 @@ from typing import List
 class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
         n = len(nums)
-        ans, sol = [], []
+        ans = []
 
-        def backtrack():
+        def backtrack(sol):
             if len(sol) == n:
                 ans.append(sol[:])
                 return
@@ -69,8 +69,15 @@ class Solution:
                     backtrack()
                     sol.pop()
 
-        backtrack()
+        backtrack([])
         return ans
+    
+
+if __name__ == "__main__":
+    s = Solution()
+    nums = [1, 2, 3]
+    print(s.permute(nums))
+    # print(s.perm)
 
 # Time Complexity: O(n!)
 # Space Complexity: O(n)
