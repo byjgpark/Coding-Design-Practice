@@ -66,11 +66,12 @@ class Solution:
             for x in nums:
                 if x not in sol:
                     sol.append(x)
-                    backtrack()
+                    backtrack(sol)
                     sol.pop()
 
         backtrack([])
         return ans
+    
     
 
 if __name__ == "__main__":
