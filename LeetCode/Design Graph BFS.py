@@ -31,3 +31,6 @@ print(f"element {search_value} : {res}")
 
 
 # output : element B : True
+
+# https://www.youtube.com/watch?v=gXgEDyodOJU
+# 9:54
