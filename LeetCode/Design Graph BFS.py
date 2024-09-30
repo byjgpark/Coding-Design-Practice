@@ -34,3 +34,5 @@ print(f"element {search_value} : {res}")
 
 # https://www.youtube.com/watch?v=gXgEDyodOJU
 # 9:54
+
+# visualize how the entire process of finding "B" with the graph Visualization\
