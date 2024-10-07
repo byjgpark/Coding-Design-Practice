@@ -3,6 +3,8 @@ from collections import deque
 def BFS(graph, start):
     visited = set()  # Keep track of the nodes that we've visited
     queue = deque([start])  # Use a queue to implement the BFS
+    
+    print("check queue ", queue)
 
     while queue:
         node = queue.popleft()  # Dequeue a node from front of queue
