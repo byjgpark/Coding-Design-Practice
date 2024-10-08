@@ -37,4 +37,6 @@ if __name__ == "__main__":
     # print("checking graph", graph.bfs())
     
     graph.bfs()
+    
+    # https://medium.com/@sergioli/breath-first-and-depth-first-search-on-tree-and-graph-in-python-99fd1861893e
 
