@@ -34,9 +34,10 @@ class SolutionBFS:
         for r in range(rows):
             for c in range(cols):
                 
-                 if grid[r][c] == "1" and (r, c) not in visited:
-                     bfs(r, c)
-                     islands += 1 
+                if grid[r][c] == "1" and (r, c) not in visited:
+                    print("check r, c", r, c)
+                    bfs(r, c)
+                    islands += 1 
 
         return islands
     
