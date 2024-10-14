@@ -18,6 +18,9 @@ class SolutionBFS:
              q = deque()
              visited.add((r, c))
              q.append((r, c))
+             
+             print("check visited", visited)
+             print("q", q)
            
              while q:
                  row, col = q.popleft()
