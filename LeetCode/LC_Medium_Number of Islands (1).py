@@ -5,16 +5,33 @@ class Solution:
 
         rows, columns = len(grid), len(grid[0])
 
+        print("Check rows", rows, "columns", columns)
+
         queue = deque()
         visited = set()
         island = 0
 
-        # def bfs(r, c):
+        def bfs(r, c):
 
-        direction = [[1,0],[-1,0], [0,1], [0,-1]]
+            direction = [[1,0],[-1,0],[0,1],[0,-1]]
 
-        for dr, dc in direction:
-            print("check dr", dr, "dc", dc)
+            print("Check r", r, "c", c)
+
+            queue.append()
+
+            for dr, dc in direction:
+                new_dr, new_dc = dr + r, dc + c
+
+                while queue:
+                # print("check rows", range(rows-1), "column", range(columns-1))
+                    if new_dr in range(rows-1) and new_dc in range(columns-1) and grid[new_dr][new_dc] == "1" and (new_dr, new_dc) not visted:
+                        
+
+
+                    print("check new_dr", new_dr, "new_dc", new_dc)
+
+            
+            # print("check dr", dr, "dc", dc)
             # for dc in direction:
             #     print("check dr [1,0]", dr, "dc", dc)
                 # for column in direction: 
@@ -25,7 +42,8 @@ class Solution:
 
         for r in range(rows):
             for c in range(columns):
-                if grid[r][c] == 1 and (r,c) not in visited:
+                # print("check here r", r,"c",c)
+                if grid[r][c] == "1" and (r,c) not in visited:
                     bfs(r,c)
                     island+=1 
 
