@@ -25,8 +25,6 @@ class Solution:
                 while queue:
                 # print("check rows", range(rows-1), "column", range(columns-1))
                     if new_dr in range(rows-1) and new_dc in range(columns-1) and grid[new_dr][new_dc] == "1" and (new_dr, new_dc) not visted:
-                        
-
 
                     print("check new_dr", new_dr, "new_dc", new_dc)
 
