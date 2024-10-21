@@ -2,6 +2,12 @@ class Node:
     def __init__(self, val = 0, neighbors = None):
         self.val = val
         self.neighbors = neighbors if neighbors is not None else []
+    
+    def __str__(self):
+        return f"Node(val={self.val}, neighbors={[n.val for n in self.neighbors]})"
+    
+    def __repr__(self):
+        return self.__str__()
 
 class Solution:
     def cloneGraph(self, node: "Node") -> "Node":
@@ -23,6 +29,13 @@ class Solution:
         # Create all nodes
         nodes = [Node(i+1) for i in range(len(adjList))]
         
+        # Create all nodes
+        # nodes = []  # Initialize an empty list to store the nodes
+        # for i in range(len(adjList)):  # Iterate through the indices of the adjacency list
+        #     node_value = i + 1  # Calculate the node value (1-indexed)
+        #     new_node = Node(node_value)  # Create a new Node object with the calculated value
+        #     nodes.append(new_node)  # Add the new node to the list of nodes
+
         # Add neighbors
         # for i, neighbors in enumerate(adjList):
         #     nodes[i].neighbors = [nodes[j-1] for j in neighbors]
@@ -30,12 +43,14 @@ class Solution:
         # Add neighbors
         for i, neighbors in enumerate(adjList):
             neighbor_nodes = []  # Create an empty list to store the neighbor nodes
-            for j in neighbors:  # Iterate over each neighbor in the neighbors list
+            for j in neighbors:  # Iterate over each neighbor in  the neighbors list
                 neighbor_nodes.append(nodes[j-1])  # Find the corresponding node and add it to the neighbor_nodes list
-                print("nodes[j-1]", nodes[j-1])
+                print("check j", j)
+                print("nodes[j-1]:", nodes[j-1])
             nodes[i].neighbors = neighbor_nodes  # Assign the list of neighbors to the current node
-            print("neighbor_nodes", neighbor_nodes)
-
+            print("neighbor_nodes:", neighbor_nodes)
+        
+        print("nodes", nodes)
         
         return nodes[0]  # Return the first node as the entry point
 
@@ -50,7 +65,9 @@ class Solution:
             visited.add(node.val)
             print(f"Node {node.val}: neighbors = {[n.val for n in node.neighbors]}")
             for neighbor in node.neighbors:
+                print("check neighbor inside of for loop", neighbor)
                 dfs(neighbor)
+                
         dfs(node)
 
 if __name__ == "__main__":
