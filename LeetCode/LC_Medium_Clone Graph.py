@@ -11,15 +11,23 @@ class Node:
 
 class Solution:
     def cloneGraph(self, node: "Node") -> "Node":
+        # print("check node from the cloneGraph function", node)
         oldToNew = {}
         def dfs(node):
             if node in oldToNew:
                 return oldToNew[node]
+            
+            # copying the value of the node
             copy = Node(node.val)
+            print("check copy inside of the dfs function", copy)
+            print("check oldToNew :", oldToNew)
+            print("check node inside of the dfs function", node)
             oldToNew[node] = copy
             for nei in node.neighbors:
                 copy.neighbors.append(dfs(nei))
             return copy
+        
+        print("check node from the cloneGraph function", node)
         return dfs(node) if node else None
     
     def createGraphFromAdjList(self, adjList):
@@ -27,14 +35,14 @@ class Solution:
             return None
         
         # Create all nodes
-        nodes = [Node(i+1) for i in range(len(adjList))]
+        # nodes = [Node(i+1) for i in range(len(adjList))]
         
         # Create all nodes
-        # nodes = []  # Initialize an empty list to store the nodes
-        # for i in range(len(adjList)):  # Iterate through the indices of the adjacency list
-        #     node_value = i + 1  # Calculate the node value (1-indexed)
-        #     new_node = Node(node_value)  # Create a new Node object with the calculated value
-        #     nodes.append(new_node)  # Add the new node to the list of nodes
+        nodes = []  # Initialize an empty list to store the nodes
+        for i in range(len(adjList)):  # Iterate through the indices of the adjacency list
+            node_value = i + 1  # Calculate the node value (1-indexed)
+            new_node = Node(node_value)  # Create a new Node object with the calculated value
+            nodes.append(new_node)  # Add the new node to the list of nodes
 
         # Add neighbors
         # for i, neighbors in enumerate(adjList):
@@ -50,7 +58,7 @@ class Solution:
             nodes[i].neighbors = neighbor_nodes  # Assign the list of neighbors to the current node
             print("neighbor_nodes:", neighbor_nodes)
         
-        print("nodes", nodes)
+        print("nodes inside of the createGraphFromAdjList function", nodes)
         
         return nodes[0]  # Return the first node as the entry point
 
@@ -63,9 +71,7 @@ class Solution:
             if node.val in visited:
                 return
             visited.add(node.val)
-            print(f"Node {node.val}: neighbors = {[n.val for n in node.neighbors]}")
             for neighbor in node.neighbors:
-                print("check neighbor inside of for loop", neighbor)
                 dfs(neighbor)
                 
         dfs(node)
@@ -80,7 +86,8 @@ if __name__ == "__main__":
     original = solution.createGraphFromAdjList(adjList)
     print("Original Graph:")
     solution.printGraph(original)
-    
+
+    print("check original from the main function", original)
     # Clone the graph and print the clone
     cloned = solution.cloneGraph(original)
     print("\nCloned Graph:")
