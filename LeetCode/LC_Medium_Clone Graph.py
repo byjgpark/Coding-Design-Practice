@@ -14,6 +14,8 @@ class Solution:
         # print("check node from the cloneGraph function", node)
         oldToNew = {}
         def dfs(node):
+            
+            # print("check node inside of the dfs function :", node)
             if node in oldToNew:
                 return oldToNew[node]
             
@@ -23,6 +25,7 @@ class Solution:
             print("check oldToNew :", oldToNew)
             print("check node inside of the dfs function", node)
             oldToNew[node] = copy
+            print("check oldToNew[node] after the copy :", oldToNew)
             for nei in node.neighbors:
                 copy.neighbors.append(dfs(nei))
             return copy
@@ -43,20 +46,28 @@ class Solution:
             node_value = i + 1  # Calculate the node value (1-indexed)
             new_node = Node(node_value)  # Create a new Node object with the calculated value
             nodes.append(new_node)  # Add the new node to the list of nodes
+        
+        print("*******nodes inside of the createGraphFromAdjList function", nodes)
 
         # Add neighbors
         # for i, neighbors in enumerate(adjList):
         #     nodes[i].neighbors = [nodes[j-1] for j in neighbors]
-        
+    
         # Add neighbors
         for i, neighbors in enumerate(adjList):
+            print("i :", i, "neighbors :", neighbors)
             neighbor_nodes = []  # Create an empty list to store the neighbor nodes
             for j in neighbors:  # Iterate over each neighbor in  the neighbors list
+                print("nodes =", nodes)
+                print("nodes[j-1] =", nodes[j-1])
+                print("check j =", j)
+                print("check j-1 =", j-1)
                 neighbor_nodes.append(nodes[j-1])  # Find the corresponding node and add it to the neighbor_nodes list
-                print("check j", j)
-                print("nodes[j-1]:", nodes[j-1])
-            nodes[i].neighbors = neighbor_nodes  # Assign the list of neighbors to the current node
-            print("neighbor_nodes:", neighbor_nodes)
+                print("neighbor_nodes:", neighbor_nodes)
+            nodes[i].neighbors = neighbor_nodes
+            print("nodes at the end of the for loop :", nodes)
+            # Assign the list of neighbors to the current node
+            # print("neighbor_nodes:", neighbor_nodes)
         
         print("nodes inside of the createGraphFromAdjList function", nodes)
         
