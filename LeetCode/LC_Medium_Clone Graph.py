@@ -10,32 +10,90 @@ class Node:
         return self.__str__()
 
 class Solution:
+    # def cloneGraph(self, node: "Node") -> "Node":
+    #     # print("check node from the cloneGraph function", node)
+    #     oldToNew = {}
+    #     def dfs(node):
+    #         # print("check node inside of the dfs function :", node)
+    #         if node in oldToNew:
+    #             # print("oldToNew[node] :", oldToNew[node])
+    #             return oldToNew[node]
+            
+    #         # copying the value of the node
+    #         copy = Node(node.val)
+    #         # print("check copy inside of the dfs function", copy)
+    #         # print("check oldToNew :", oldToNew)
+    #         # print("check node inside of the dfs function", node)
+    #         oldToNew[node] = copy
+    #         # print("check oldToNew[node] after the copy :", oldToNew)
+    #         # print("check copy right before for loop:", copy)
+            
+    #         for nei in node.neighbors:
+    #             # print("check nei inside of the for loop:", nei)
+    #             copy.neighbors.append(dfs(nei))
+            
+    #         # print("check copy right after for loop:", copy)
+    #         return copy
+        
+    #     # print("check node from the cloneGraph function", node)
+    #     return dfs(node) if node else None
+    
     def cloneGraph(self, node: "Node") -> "Node":
-        # print("check node from the cloneGraph function", node)
+        print("\n=== Starting cloneGraph with node:", node)
         oldToNew = {}
-        def dfs(node):
-            print("check node inside of the dfs function :", node)
+        recursion_depth = 0  # To track DFS depth
+        
+        def dfs(node, depth):
+            nonlocal recursion_depth
+            recursion_depth = depth
+            indent = "    " * depth  # Visual indentation for print clarity
+            
+            print(f"\n{indent}🔄 DFS Level {depth} called with node: {node}")
+            print(f"{indent}Current oldToNew dictionary: {oldToNew}")
+            
+            # Check if node is already cloned
             if node in oldToNew:
+                print(f"{indent}✓ Node {node.val} already exists in oldToNew")
+                print(f"{indent}Returning existing copy: {oldToNew[node]}")
                 return oldToNew[node]
             
-            # copying the value of the node
+            # Create new node copy
             copy = Node(node.val)
-            print("check copy inside of the dfs function", copy)
-            print("check oldToNew :", oldToNew)
-            print("check node inside of the dfs function", node)
+            print(f"{indent}📝 Created new copy node: {copy}")
+            
+            # Add to dictionary
             oldToNew[node] = copy
-            print("check oldToNew[node] after the copy :", oldToNew)
-            print("check copy right before for loop:", copy)
+            print(f"{indent}📊 Updated oldToNew dictionary: {oldToNew}")
             
-            for nei in node.neighbors:
-                print("check nei inside of the for loop:", nei)
-                copy.neighbors.append(dfs(nei))
+            # Process neighbors
+            print(f"{indent}👥 Processing neighbors of node {node.val}: {[n.val for n in node.neighbors]}")
             
-            print("check copy right after for loop:", copy)
+            for i, nei in enumerate(node.neighbors):
+                print(f"\n{indent}⭐ Processing neighbor {i+1}/{len(node.neighbors)} of node {node.val}: {nei}")
+                neighbor_copy = dfs(nei, depth + 1)
+                copy.neighbors.append(neighbor_copy)
+                print(f"{indent}➕ Added neighbor {neighbor_copy.val} to node {copy.val}'s neighbors")
+                print(f"{indent}📋 Current neighbors of node {copy.val}: {[n.val for n in copy.neighbors]}")
+            
+            print(f"\n{indent}✅ Completed processing node {node.val}")
+            print(f"{indent}Final state of copy node {copy.val}: {copy}")
+            
             return copy
         
-        # print("check node from the cloneGraph function", node)
-        return dfs(node) if node else None
+        # Handle empty graph case
+        if not node:
+            print("Empty graph received")
+            return None
+        
+        # Start DFS
+        result = dfs(node, 0)
+        print("\n=== Final Result ===")
+        print("Final oldToNew dictionary state:")
+        for original, copied in oldToNew.items():
+            print(f"Original {original.val} -> Copy {copied.val} with neighbors {[n.val for n in copied.neighbors]}")
+        return result
+
+    
     
     def createGraphFromAdjList(self, adjList):
         if not adjList:
@@ -107,3 +165,7 @@ if __name__ == "__main__":
     cloned = solution.cloneGraph(original)
     print("\nCloned Graph:")
     solution.printGraph(cloned)
+
+
+#Claude.ai
+#https://claude.site/artifacts/4e8ba047-a127-4152-b80b-2ef150c0c5c6
