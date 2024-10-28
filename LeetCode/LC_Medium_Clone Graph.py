@@ -89,8 +89,11 @@ class Solution:
         result = dfs(node, 0)
         print("\n=== Final Result ===")
         print("Final oldToNew dictionary state:")
+        # print("check oldToNew :", oldToNew)
+        # print("check oldToNew.items() :", oldToNew.items())
         for original, copied in oldToNew.items():
-            print(f"Original {original.val} -> Copy {copied.val} with neighbors {[n.val for n in copied.neighbors]}")
+            print("check original :", original, "copied :", copied)
+            # print(f"Original {original.val} -> Copy {copied.val} with neighbors {[n.val for n in copied.neighbors]}")
         return result
 
     
