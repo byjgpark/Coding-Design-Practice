@@ -95,6 +95,39 @@ class Solution:
             print("check original :", original, "copied :", copied)
             # print(f"Original {original.val} -> Copy {copied.val} with neighbors {[n.val for n in copied.neighbors]}")
         return result
+        
+        
+        # My 1st attempt
+        # if not node:
+        #     return 
+        # # 
+        # old_neighbor = {}
+
+        # # 
+        # def dfs(node):
+            
+        #     print("check dfs function", node)
+        #     if node in old_neighbor:
+        #         # print("Check node[node.val]", node[node.val])
+        #         return old_neighbor[node]
+        #         # return node[node.val]
+
+
+        #     copy = Node(node.val)
+        #     print("Check copy", copy)
+        #     old_neighbor[node] = copy
+            
+        #     print("Check old_neighbor[node]", old_neighbor)
+            
+        #     for nei in node.neighbors:
+        #         print("check nei", nei)
+        #         node.neighbors.append(dfs(nei))
+
+        # if node:
+        #     return dfs(node)
+        # else:
+        #     return 
+        
 
     
     
@@ -160,6 +193,7 @@ if __name__ == "__main__":
     
     # Create and print the original graph
     original = solution.createGraphFromAdjList(adjList)
+    
     print("Original Graph:")
     solution.printGraph(original)
 
