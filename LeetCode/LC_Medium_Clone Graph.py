@@ -138,6 +138,9 @@ class Solution:
         # Create all nodes
         nodes = [Node(i+1) for i in range(len(adjList))]
         
+
+        print("check nodes inside of the createGraphFromAdjList function", nodes)
+        
         # Create all nodes
         # nodes = []  # Initialize an empty list to store the nodes
         # for i in range(len(adjList)):  # Iterate through the indices of the adjacency list
@@ -148,21 +151,21 @@ class Solution:
         # print("*******nodes inside of the createGraphFromAdjList function", nodes)
 
         # Add neighbors
-        for i, neighbors in enumerate(adjList):
-            nodes[i].neighbors = [nodes[j-1] for j in neighbors]
+        # for i, neighbors in enumerate(adjList):
+        #     nodes[i].neighbors = [nodes[j-1] for j in neighbors]
     
         # Add neighbors
-        # for i, neighbors in enumerate(adjList):
-        #     # print("i :", i, "neighbors :", neighbors)
-        #     neighbor_nodes = []  # Create an empty list to store the neighbor nodes
-        #     for j in neighbors:  # Iterate over each neighbor in  the neighbors list
-        #         # print("nodes =", nodes)
-        #         # print("nodes[j-1] =", nodes[j-1])
-        #         # print("check j =", j)
-        #         # print("check j-1 =", j-1)
-        #         neighbor_nodes.append(nodes[j-1])  # Find the corresponding node and add it to the neighbor_nodes list
-        #         # print("neighbor_nodes:", neighbor_nodes)
-        #     nodes[i].neighbors = neighbor_nodes
+        for i, neighbors in enumerate(adjList):
+            # print("i :", i, "neighbors :", neighbors)
+            neighbor_nodes = []  # Create an empty list to store the neighbor nodes
+            for j in neighbors:  # Iterate over each neighbor in  the neighbors list
+                print("nodes =", nodes)
+                print("nodes[j-1] =", nodes[j-1])
+                print("check j =", j)
+                print("check j-1 =", j-1)
+                neighbor_nodes.append(nodes[j-1])  # Find the corresponding node and add it to the neighbor_nodes list
+                print("neighbor_nodes:", neighbor_nodes)
+            nodes[i].neighbors = neighbor_nodes
             # print("nodes at the end of the for loop :", nodes)
             # Assign the list of neighbors to the current node
             # print("neighbor_nodes:", neighbor_nodes)
@@ -193,6 +196,8 @@ if __name__ == "__main__":
     
     # Create and print the original graph
     original = solution.createGraphFromAdjList(adjList)
+    
+    print("check original from the main function", original)
     
     print("Original Graph:")
     solution.printGraph(original)
