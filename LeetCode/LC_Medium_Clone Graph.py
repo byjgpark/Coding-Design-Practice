@@ -128,8 +128,52 @@ class Solution:
         # else:
         #     return 
         
+        
+        # 2nd attempt
+        from typing import Optional
 
-    
+class Solution:
+    def cloneGraph(self, node: Optional['Node']) -> Optional['Node']:
+
+        # if not node 
+        if not node:
+            return None
+
+        old_nei = {}
+
+        def dfs(node_param):
+
+            # print("check node_param", node_param.val)
+
+            if node_param in old_nei:
+                return old_nei[node_param]
+
+            # 1. creating copy object
+            # 2. creating copy object
+
+            print("check node_param.val", node_param.val)
+            copy = Node(node_param.val)
+            old_nei[node_param] = copy
+
+            for nei in node_param.neighbors:
+                copy.neighbors.append(dfs(nei))
+            
+            return copy
+            # print("check copy", copy.val)
+
+        if node:
+
+            # print("check dfs(node)", dfs(node).val)
+
+            for obj in dfs(node).neighbors:
+                print("check obj.val", obj.val)
+                for nei in obj.neighbors:
+                    print("check nei", nei.val)
+            print("Check dfs(node)", dfs(node).val)
+            return dfs(node)
+        else:
+            return None
+
     
     def createGraphFromAdjList(self, adjList):
         if not adjList:
