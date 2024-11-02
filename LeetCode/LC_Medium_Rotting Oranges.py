@@ -27,6 +27,9 @@ class Solution:
         directions = [[0, 1], [0, -1], [1, 0], [-1, 0]]
         
         while fresh > 0 and q:
+            
+            # print("check q:", len(q))
+            
             length = len(q)
             print(f"\n=== Minute {time} ===")
             print(f"Processing {length} rotten oranges in queue")
@@ -76,3 +79,60 @@ if __name__ == "__main__":
     print(sol.orangesRotting([[2,1,1],[1,1,0],[0,1,1]]))
 
 # https://claude.site/artifacts/cdc66d46-7ca7-4032-b7bc-0cf7e5b4b05a
+
+#my 1st attempt 
+# from collections import deque 
+
+# class Solution:
+#     def orangesRotting(self, grid: List[List[int]]) -> int:
+
+#         rows, columns = len(grid), len(grid[0])
+
+#         # print("check ", type(grid[0][0]))
+
+#         # print("check rows", rows, "check columns", columns)
+
+#         q = deque([])  
+        
+#         fresh = 0
+        
+#         for row in range(rows):
+#             for column in range(columns):
+
+#                 if grid[row][column] == 1:
+#                     fresh += 1
+
+#                 elif grid[row][column] == 2:
+#                     q.append((row, column))
+
+#                 direction = [[0,1], [0,-1], [1,0], [-1,0]]
+
+#                 while fresh > 0 and q:
+#                     r, c = q.popleft()
+
+#                     print("r :",r, "c", c)
+
+#                     for dr, dc in direction:
+#                         new_dr, new_dc = r+dr, c+dc
+
+
+                        
+
+
+
+#                     # for r
+
+
+
+
+#                     print("check r",r, "c", c)
+
+
+                    
+
+
+        
+
+
+
+                
