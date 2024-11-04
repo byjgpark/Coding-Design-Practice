@@ -190,7 +190,78 @@ if __name__ == "__main__":
 #                     return -1
                     
 
+# 3rd attempt
+# from collections import deque
 
+# class Solution:
+#     def orangesRotting(self, grid: List[List[int]]) -> int:
+        
+#         rows, columns = len(grid), len(grid[0])
+
+#         fresh = 0
+#         q = deque([])
+#         time = 0
+
+#         for row in range(rows):
+#             for column in range(columns):
+
+#                 print("check grid[row][column]", grid[row][column])
+                
+#                 if grid[row][column] == 1:
+#                     print("Check grid here")
+#                     fresh += 1
+                
+#                 elif grid[row][column] == 2:
+#                     q.append((row, column))
+                
+
+#         print("check fresh", fresh, "check q", q)
+#         print("check here 1234567")       
+
+#         while fresh > 0 and q:
+
+#             q_length = len(q)
+
+#             print("check here 1234567")
+
+#             for i in range(q_length):
+
+#                 direction = [[1,0], [-1,0], [0,1], [0, -1]]
+#                 r, c = q.popleft()
+
+#                 # print("check here 1234567")
+
+#                 for dr, dc in direction:
+#                     new_r, new_c = r + dr, c + dc
+
+#                     # print("check here 1234567")
+
+#                     print("check rows", rows, "column", columns, "inside of for-loop")
+
+#                     if new_r in range(rows) and new_c in range(columns) and grid[new_r][new_c] == 1:
+#                         print("check here's 2d function")
+#                         grid[new_r][new_c] = 2
+#                         print("check grid[new_r][new_c]", grid[new_r][new_c])
+#                         q.append((new_r,new_c))
+#                         fresh-=1
+#                            # print("check fresh", fresh)
+#             time+=1
+
+
+#         if fresh == 0:
+#             return time
+#         else:
+#             return -1
+                    
+
+
+
+
+
+
+        
+
+ 
 
 
 
