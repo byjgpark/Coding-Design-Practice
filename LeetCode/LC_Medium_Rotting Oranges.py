@@ -253,7 +253,63 @@ if __name__ == "__main__":
 #         else:
 #             return -1
                     
+# 4th attempt
+# from collections import deque 
 
+
+# class Solution:
+#     def orangesRotting(self, grid: List[List[int]]) -> int:
+        
+#         rows, columns = len(grid), len(grid[0])
+
+#         print("check rows",rows,"columns", columns)
+
+
+#         time=0
+#         fresh=0
+#         q = deque([])
+
+#         for row in range(rows):
+#             for column in range(columns):
+
+#                 if grid[row][column] == 1:
+#                     fresh+=1
+                
+#                 elif grid[row][column] == 2:
+#                     q.append((row,column))
+
+#         print("check fresh :", fresh,"q :", q)
+
+#         while fresh > 0 and q:
+#             q_length = len(q)
+
+#             r, c = q.popleft()
+
+#             print("check q",q)
+#             print("Check q_length", q_length)
+            
+#             for i in range(q_length):
+
+#                 direction = [[1,0], [-1,0], [0,1], [0,-1]]  
+
+#                 for dr, dc in direction:
+#                     new_r, new_c = r+dr, c+dc
+
+#                     # print("check new_r", new_r, "new_c", new_c)
+
+#                     if (new_r in range(rows) and new_c in range(columns)) and grid[new_r][new_c] == 1:
+#                         print("check new grid", (new_r, new_c))
+#                         grid[new_r][new_c] = 2
+#                         q.append((new_r,new_c))
+#                         print("check q inside of if ", q)
+#                         fresh -= 1
+#             time +=1
+        
+#         if fresh == 0:
+#             return time
+#         else:
+#             return -1
+ 
 
 
 
