@@ -3,6 +3,7 @@ from typing import List
 class Solution:
     def pacificAtlantic(self, heights: List[List[int]]) -> List[List[int]]:
         ROWS, COLS = len(heights), len(heights[0])
+        
         print(f"\nGrid Dimensions: {ROWS}x{COLS}")
         print("Initial Heights Grid:")
         for row in heights:
@@ -85,3 +86,5 @@ class Solution:
 if __name__ == "__main__":
     sol = Solution()
     print(sol.pacificAtlantic([[1,2,2,3,5],[3,2,3,4,4],[2,4,5,3,1],[6,7,1,4,5],[5,1,1,2,4]]))
+    
+    
