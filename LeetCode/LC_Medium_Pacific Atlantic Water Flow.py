@@ -69,23 +69,31 @@ class Solution:
         for c in range(COLS):
             print(f"\nStarting from (0, {c})")
             dfs(0, c, pac, heights[0][c], "P")
+            print("check row from pac from top", 0)
+            print("check col from pac from top", c)
             
         print("\nStarting Pacific DFS from left edge:")
         for r in range(ROWS):
             print(f"\nStarting from ({r}, 0)")
             dfs(r, 0, pac, heights[r][0], "P")
-            
+            print("check row from pac from left", r)
+            print("check col from pac from left", 0)
+                
         print("\nFinal Pacific set:", pac)
         
         print("\nStarting Atlantic DFS from bottom edge:")
         for c in range(COLS):
             print(f"\nStarting from ({ROWS-1}, {c})")
             dfs(ROWS - 1, c, atl, heights[ROWS-1][c], "A")
+            print("check row from atl from bottom", ROWS-1)
+            print("check col from atl from bottom", c)
             
         print("\nStarting Atlantic DFS from right edge:")
         for r in range(ROWS):
             print(f"\nStarting from ({r}, {COLS-1})")
             dfs(r, COLS - 1, atl, heights[r][COLS-1], "A")
+            print("check row from atl from right", r)
+            print("check col from atl from right", COLS-1)
             
         print("\nFinal Atlantic set:", atl)
         
