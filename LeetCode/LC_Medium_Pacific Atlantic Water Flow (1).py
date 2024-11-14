@@ -20,11 +20,11 @@ class Solution:
 
         for c in range(COLS):
             dfs(0, c, pac, heights[0][c])
-        #     dfs(ROWS - 1, c, atl, heights[ROWS - 1][c])
+            dfs(ROWS - 1, c, atl, heights[ROWS - 1][c])
 
-        # for r in range(ROWS):
-        #     dfs(r, 0, pac, heights[r][0])
-        #     dfs(r, COLS - 1, atl, heights[r][COLS - 1])
+        for r in range(ROWS):
+            dfs(r, 0, pac, heights[r][0])
+            dfs(r, COLS - 1, atl, heights[r][COLS - 1])
 
         # res = []
         # for r in range(ROWS):
@@ -33,7 +33,8 @@ class Solution:
         #             res.append([r, c])
         # return res
         
-        print("check pac", pac)
+        print("check pac", len(pac))
+        print("check atl", len(atl))
     
     
 if __name__ == "__main__":
