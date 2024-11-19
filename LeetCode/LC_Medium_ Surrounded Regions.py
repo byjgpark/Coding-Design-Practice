@@ -73,12 +73,23 @@ class Solution:
 
 if __name__ == "__main__":
     # Example usage:
+    
+    # board = [
+    # ["X", "X", "X", "X"],
+    # ["X", "O", "O", "X"],
+    # ["X", "X", "O", "X"],
+    #     ["X", "O", "X", "X"]
+    # ]
+    
+    # generate different test case from different board size
     board = [
-    ["X", "X", "X", "X"],
-    ["X", "O", "O", "X"],
-    ["X", "X", "O", "X"],
-        ["X", "O", "X", "X"]
+        ["X", "X", "X", "X", "X"],
+        ["X", "O", "O", "O", "X"],
+        ["X", "X", "O", "O", "X"],
+        ["X", "O", "X", "X", "X"],
+        ["X", "O", "O", "X", "X"]
     ]
+    
     solution = Solution()
     print("Running surrounded regions solution with debug output:")
     solution.solve(board)
