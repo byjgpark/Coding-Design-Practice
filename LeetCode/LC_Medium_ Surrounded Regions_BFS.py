@@ -65,5 +65,6 @@ if __name__ == "__main__":
         ["X", "O", "O", "O", "X"]
     ]
     
+    
     solution.solve(board)
     
