@@ -71,7 +71,9 @@ if __name__ == "__main__":
     # print(sol.canFinish(2, [[1, 0], [0, 1]]))
     # print(sol.canFinish(3, [[1, 0], [2, 1]]))
     # print(sol.canFinish(3, [[1, 0], [2, 1], [0, 2]]))
-    # print(sol.canFinish(4, [[1, 0], [2, 1], [3, 2], [1, 3]]))
+    
+    # generate cycle test case
+    print(sol.canFinish(4, [[1, 0], [2, 1], [3, 2], [1, 3]]))
     
     # generate no cycle test case
-    print(sol.canFinish(4, [[1, 0], [2, 1], [3, 2]]))
+    # print(sol.canFinish(4, [[1, 0], [2, 1], [3, 2]]))
