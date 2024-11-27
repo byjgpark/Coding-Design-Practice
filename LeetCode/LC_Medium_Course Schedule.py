@@ -8,6 +8,9 @@ class Solution:
         print(f"Prerequisites: {prerequisites}")
         
         preMap = {i: [] for i in range(numCourses)}
+        
+        print(f"\nRight after initializing prerequisite map: {preMap}")
+        
         for crs, pre in prerequisites:
             preMap[crs].append(pre)
             
