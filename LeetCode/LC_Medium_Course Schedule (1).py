@@ -17,12 +17,12 @@ class Solution:
         # Store all courses along the current DFS path
         visiting = set()
         
-        def dfs(crs, depth=""):
-            indent = "  " * len(depth)  # Create indentation based on recursion depth
+        def dfs(crs, depth=0):
+            indent = "  " * depth  # Create indentation based on recursion depth
             
             # ADDED: More detailed entry logging
             print(f"\n{indent}🟢 ENTRY POINT: Entering DFS for course {crs}")
-            print(f"{indent}  Current recursion depth: {len(depth)}")
+            print(f"{indent}  Current recursion depth: {depth}")
             print(f"{indent}  Current visiting set before check: {list(visiting)}")
             print(f"{indent}  Current prerequisites for course {crs}: {preMap[crs]}")
             
@@ -53,7 +53,7 @@ class Solution:
                 print(f"{indent}  Checking prerequisite {pre} for course {crs}")
                 
                 # Recursive DFS call
-                dfs_result = dfs(pre, depth + "  ")
+                dfs_result = dfs(pre, depth + 1)
                 
                 # Check result of DFS
                 if not dfs_result:
@@ -81,6 +81,10 @@ class Solution:
             # Clear prerequisites to mark as completed
             preMap[crs] = []
             print(f"{indent}  Marked course {crs} as completed (cleared prerequisites)")
+            
+            # NEW: Print prerequisite status after clearing
+            print(f"{indent}  📋 Prerequisites status AFTER clearing:")
+            print(f"{indent}  Updated prerequisite map: {preMap}")
             
             print(f"\n{indent}✅ SUCCESSFUL VERIFICATION:")
             print(f"{indent}  Successfully verified course {crs}")
