@@ -67,7 +67,6 @@ class Solution:
                     visiting.remove(crs)
                     print(f"{indent}  Removed course {crs} from visiting set")
                     print(f"{indent}  Updated visiting set after removal: {list(visiting)}")
-                    
                     return False
                 
                 print(f"{indent}  ✅ Prerequisite {pre} for course {crs} is VALID")
@@ -113,7 +112,10 @@ if __name__ == "__main__":
     sol = Solution()
     
     # generate cycle test case w/o cycle
-    print(sol.canFinish(4, [[1, 0], [2, 1], [3, 2]]))
+    # print(sol.canFinish(4, [[1, 0], [2, 1], [3, 2]]))
     
     # Cycle test case with cycle
     # print("checking final result", sol.canFinish(4, [[1, 0], [2, 1], [3, 2], [1, 3]]))
+    
+    # generate another test case with cycle w/ 5 numCourses
+    print(sol.canFinish(5, [[1, 0], [2, 1], [3, 2], [4, 3], [3, 4]]))
