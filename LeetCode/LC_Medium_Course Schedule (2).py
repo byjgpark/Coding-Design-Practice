@@ -11,6 +11,9 @@ class Solution:
 
         for i in rnumCourses:
             print("check i :", i)
+            
+            
+            
 
 
         
