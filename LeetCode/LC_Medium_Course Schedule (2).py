@@ -3,17 +3,35 @@ class Solution:
         
         print("check numCourses :", numCourses)
 
-        # prerequisites = { }
+        prerequMap = {}
 
-        print("check prerequisites", prerequisites)
+        for i in range(numCourses):
+            prerequMap[i] = []
 
-        prerequObject = {}
+        for crs, pre in prerequisites:
+            prerequMap[crs].append(pre)
 
-        for i in rnumCourses:
-            print("check i :", i)
+        print("check prerequMap", prerequMap)
+
+        visit = set()
+
+        # def dfs(crs):
+
+            # if crs in visit: 
+
+
+
+        # looping through the course number 
+
+        # for i in range(numCourses):
+
             
+
             
-            
+            # print("check i", i)
+
+
+
 
 
         
