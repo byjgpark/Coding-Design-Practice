@@ -14,26 +14,34 @@ class Solution:
             prerequMap[crs].append(pre)
 
         print("check prerequMap", prerequMap)
-        
-        
 
         visit = set()
 
-
         def dfs(crs):
 
-            if crs in visit:
+            if crs in visit: 
                 return False
             
-            if  
-
+            if prerequMap[crs] == []:
+                return True
+            
+            visit.add(crs)
+            
+            for pre in prerequMap[crs]:
+                
+                print("check pre", pre, "of crs", crs)
+                
+                
+                
+            
 
 
         # # looping through the course number 
 
         for i in range(numCourses):
+            dfs(i)
 
-            if not dfs(i):
+        #     if not dfs(i):
                 
 
             
@@ -43,13 +51,13 @@ if __name__ == "__main__":
     sol = Solution()
     
     # generate cycle test case w/o cycle
-    # print(sol.canFinish(4, [[1, 0], [2, 1], [3, 2]]))
+    print(sol.canFinish(4, [[1, 0], [2, 1], [3, 2]]))
     
     # Cycle test case with cycle
     # print("checking final result", sol.canFinish(4, [[1, 0], [2, 1], [3, 2], [1, 3]]))
     
     # generate another test case with cycle w/ 5 numCourses
-    print(sol.canFinish(5, [[1, 0], [2, 1], [3, 2], [4, 3], [3, 4]]))
+    # print(sol.canFinish(5, [[1, 0], [2, 1], [3, 2], [4, 3], [3, 4]]))
     
 
 
