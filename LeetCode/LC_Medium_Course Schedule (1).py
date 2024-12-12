@@ -17,6 +17,7 @@ class Solution:
         # Store all courses along the current DFS path
         visiting = set()
         
+        
         def dfs(crs, depth=0):
             indent = "  " * depth  # Create indentation based on recursion depth
             
