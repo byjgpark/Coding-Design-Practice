@@ -10,6 +10,7 @@ class Solution:
         for original_string in strs:
             print("\nProcessing string:", original_string)  # Debug: Current string being processed
             
+            
             # Sort the characters of the string to generate the key
             sorted_string = ''.join(sorted(original_string))
             print("Sorted string:", sorted_string)  # Debug: Key for grouping
