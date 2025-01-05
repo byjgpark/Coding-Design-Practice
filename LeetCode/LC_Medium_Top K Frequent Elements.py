@@ -16,7 +16,6 @@ class Solution:
             res.append(arr.pop()[1])
         return res
     
-    
 if __name__ == "__main__":
     nums = [1,1,1,2,2,3]
     k = 2
