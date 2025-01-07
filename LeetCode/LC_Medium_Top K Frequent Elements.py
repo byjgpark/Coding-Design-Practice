@@ -1,26 +1,33 @@
-from typing import List
-
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        count = {}
-        for num in nums:
-            # count[num] = 1 + count.get(num, 0)
-            if num in count:
-                count[num] += 1
-            else:
-                count[num] = 1
 
-        arr = []
-        for num, cnt in count.items():
-            arr.append([cnt, num])
-        arr.sort()
+        map = {}
+        for num in nums:
+            if num in map:
+                map[num] += 1
+            else:
+                map[num] = 1
+
+        print("check map", map.items())
 
         res = []
-        while len(res) < k:
-            res.append(arr.pop()[1])
-        return res
+        for key, value in map.items():
+            res.append((value,key))
+        res.sort()
+
+        ans = []
+        while k > 0:
+            
+            ans.append(res.pop()[1])
+            print("Check k", k)
+            k-= 1
+        
+        return ans
+        print("check res", ans)
+
+        # for index, value in num
     
-if __name__ == "__main__":
-    nums = [1,1,1,2,2,3]
-    k = 2
-    print(Solution().topKFrequent(nums, k))
+
+
+        
+        
