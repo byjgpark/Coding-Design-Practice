@@ -7,6 +7,7 @@ class Solution:
             # Debug: Print entering the function
             print(f"{indent}dfs({i}) called.")
             
+            
             # Base case
             if i >= n:
                 result = int(i == n)
