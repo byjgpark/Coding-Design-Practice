@@ -7,8 +7,6 @@ class Solution:
             # Debug: Print entering the function
             print(f"{indent}dfs({i}) called.")
             
-            
-            
             # Base case
             if i >= n:
                 result = int(i == n)
@@ -22,6 +20,7 @@ class Solution:
             # Recursive calls
             left = dfs(i + 1, depth + 1)  # dfs for i + 1
             right = dfs(i + 2, depth + 1)  # dfs for i + 2
+            
             
             # Debug: Print after recursive calls
             print(f"{indent}Results of dfs({i + 1}) = {left} and dfs({i + 2}) = {right}.")
