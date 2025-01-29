@@ -25,4 +25,4 @@ class Solution:
 
 if __name__ == "__main__":
     solution = Solution()
-    print(solution.climbStairs(5))
+    print(solution.climbStairs(1))
