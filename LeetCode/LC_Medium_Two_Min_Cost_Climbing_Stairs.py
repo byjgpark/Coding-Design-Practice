@@ -16,6 +16,7 @@ class Solution:
             print(f"{indent}< dfs({i}) returns {result} = {cost[i]} + min({res1}, {res2})")
             return result
         
+        
         print("Calculating dfs(0):")
         result0 = dfs(0)
         print("\nCalculating dfs(1):")
