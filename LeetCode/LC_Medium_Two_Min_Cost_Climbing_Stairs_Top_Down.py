@@ -4,6 +4,7 @@ class Solution:
     def minCostClimbingStairs(self, cost: List[int]) -> int:
         memo = [-1] * len(cost)
         
+        
         def dfs(i):
             print(f"Entering dfs({i})")
             if i >= len(cost):
