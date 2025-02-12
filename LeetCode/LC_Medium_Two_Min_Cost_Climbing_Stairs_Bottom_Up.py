@@ -5,6 +5,7 @@ class Solution:
         n = len(cost)
         dp = [0] * (n + 1)
         
+        
         # Debug: initial state
         print("Initial dp:", dp)
         print("Cost array:", cost)
