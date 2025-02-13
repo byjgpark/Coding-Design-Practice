@@ -11,14 +11,16 @@ class Solution:
         print("Cost array:", cost)
         
         for i in range(2, n + 1):
-            option1 = dp[i - 1] + cost[i - 1]  # Taking one step from i-1
-            option2 = dp[i - 2] + cost[i - 2]  # Taking two steps from i-2
-            dp[i] = min(option1, option2)
+            dpOption1 = dp[i - 1] 
+            costOption1  =  cost[i - 1]  # Taking one step from i-1
+            dpOption2 = dp[i - 2] 
+            costOption2 = cost[i - 2]  # Taking two steps from i-2
+            dp[i] = min(dpOption1 + costOption1, dpOption2 + costOption2)
             
             # Debug: Print the computation details for current iteration
             print(f"\ni = {i}")
-            print(f"Option1: dp[{i - 1}] ({dp[i - 1]}) + cost[{i - 1}] ({cost[i - 1]}) = {option1}")
-            print(f"Option2: dp[{i - 2}] ({dp[i - 2]}) + cost[{i - 2}] ({cost[i - 2]}) = {option2}")
+            print(f"Option1: dp[{i - 1}] ({dp[i - 1]}) + cost[{i - 1}] ({cost[i - 1]}) = {dpOption1 + costOption1}")
+            print(f"Option2: dp[{i - 2}] ({dp[i - 2]}) + cost[{i - 2}] ({cost[i - 2]}) = {dpOption2 + costOption2}")
             print(f"Chosen dp[{i}] = {dp[i]}")
             print("Current dp state:", dp)
         
