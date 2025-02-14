@@ -10,6 +10,7 @@ class Solution:
         print("Initial dp:", dp)
         print("Cost array:", cost)
         
+        
         for i in range(2, n + 1):
             dpOption1 = dp[i - 1] 
             costOption1  =  cost[i - 1]  # Taking one step from i-1
