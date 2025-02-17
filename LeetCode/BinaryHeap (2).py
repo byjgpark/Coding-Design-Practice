@@ -19,14 +19,18 @@ class HeapClass:
         # [1,2,3,4,5]
         # parentIndex = 
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
     
-    heap = HeapClass()
     
-    arr = [2,3,4,5,1]
+#     heap = HeapClass()
     
-    # print("check index ", arr[1.5])
+#     arr = [2,3,4,5,1]
     
-    print("check here ", math.floor((2-1)/2))
+#     # print("check index ", arr[1.5])
     
-    # heap.heaplifyUp()
+#     print("check here ", math.floor((2-1)/2))
+    
+#     # heap.heaplifyUp()
+
+
+    

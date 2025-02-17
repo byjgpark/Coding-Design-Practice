@@ -1,3 +1,5 @@
+from typing import List
+
 class Solution:
     def minCostClimbingStairs(self, cost: List[int]) -> int:
         
@@ -12,7 +14,14 @@ class Solution:
 
             # return dp[i]
         
-        print("check array of dp =", dp)
+        # print("check array of dp =", dp)
 
         return dp[len(dp)-1]
+    
+if __name__ == "__main__":
+    cost = [10,15,20]
+    # cost = [1,100,1,1,1,100,1,1,100,1]
+    print("check cost = ", cost)
+    sol = Solution()
+    print("check sol = ", sol.minCostClimbingStairs(cost))
 
