@@ -21,6 +21,7 @@ class Solution:
             cost[i] += chosen
             print("After update: cost[{}] becomes {}".format(i, cost[i]))
             print("Updated cost array:", cost)
+            
         
         result = min(cost[0], cost[1])
         print("\nFinal updated cost array:", cost)
@@ -30,4 +31,8 @@ class Solution:
 if __name__ == "__main__":
     solution = Solution()
     final_result = solution.minCostClimbingStairs([10, 15, 20])
+    # final_result = solution.minCostClimbingStairs([1, 100, 1, 1, 1, 100, 1, 1, 100, 1])
+    # what is final_result's langth ?
+    # what is [1, 100, 1, 1, 1, 100, 1, 1, 100, 1]'s length ?   
+    # print("check ", len([1, 100, 1, 1, 1, 100, 1, 1, 100, 1]))  
     print("\nFinal result:", final_result)
