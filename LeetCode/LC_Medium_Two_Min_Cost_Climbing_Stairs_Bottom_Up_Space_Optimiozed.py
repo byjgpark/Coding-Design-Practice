@@ -12,6 +12,7 @@ class Solution:
             next2 = cost[i + 2]
             chosen = min(next1, next2)
             
+            
             print("cost[{}] = {}".format(i, cost[i]))
             print("cost[{}] = {}".format(i + 1, next1))
             print("cost[{}] = {}".format(i + 2, next2))
