@@ -12,7 +12,6 @@ class Solution:
             next2 = cost[i + 2]
             chosen = min(next1, next2)
             
-            
             print("cost[{}] = {}".format(i, cost[i]))
             print("cost[{}] = {}".format(i + 1, next1))
             print("cost[{}] = {}".format(i + 2, next2))
@@ -31,8 +30,8 @@ class Solution:
 
 if __name__ == "__main__":
     solution = Solution()
-    final_result = solution.minCostClimbingStairs([10, 15, 20])
-    # final_result = solution.minCostClimbingStairs([1, 100, 1, 1, 1, 100, 1, 1, 100, 1])
+    # final_result = solution.minCostClimbingStairs([10, 15, 20])
+    final_result = solution.minCostClimbingStairs([1, 100, 1, 1, 1, 100, 1, 1, 100, 1])
     # what is final_result's langth ?
     # what is [1, 100, 1, 1, 1, 100, 1, 1, 100, 1]'s length ?   
     # print("check ", len([1, 100, 1, 1, 1, 100, 1, 1, 100, 1]))  
