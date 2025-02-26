@@ -22,6 +22,7 @@ class Solution:
             print("After update: cost[{}] becomes {}".format(i, cost[i]))
             print("Updated cost array:", cost)
             
+            
         
         result = min(cost[0], cost[1])
         print("\nFinal updated cost array:", cost)
