@@ -3,35 +3,33 @@ from typing import List
 class Solution:
     def rob(self, nums: List[int]) -> int:
         def dfs(i, depth=0):
-            indent = "  " * depth  # Visualize recursion depth
-            print(f"{indent}→ dfs({i}) [Depth {depth}]")
-
-            # Base case
+            indent = "  " * depth
+            print(f"\n{indent}Entering dfs for index i = {i}")
             if i >= len(nums):
-                print(f"{indent}  ↳ Base case (i={i} >= {len(nums)}), return 0")
+                print(f"{indent}Base case: i={i} is beyond the array. Returning 0.")
                 return 0
-
-            # Recursive cases
-            print(f"{indent}  Computing max(skip house {i} → dfs({i+1}), rob house {i} → {nums[i]} + dfs({i+2}))")
             
-            skip = dfs(i + 1, depth + 1)
-            print(f"{indent}  ↳ Result from skipping house {i}: {skip}")
+            # Option 1: Skip current house and go to i + 1
+            print(f"{indent}Option 1: Skipping house {i} (value {nums[i] if i < len(nums) else 'N/A'}) and jumping to i+1")
+            option1 = dfs(i + 1, depth + 1)
+            print(f"{indent}Returned from DFS call for i={i+1} with value: {option1}")
             
-            rob = nums[i] + dfs(i + 2, depth + 1)
-            print(f"{indent}  ↳ Result from robbing house {i}: {rob} (including nums[{i}] = {nums[i]})")
+            # Option 2: Rob current house and go to i + 2
+            print(f"{indent}Option 2: Robbing house {i} (value {nums[i]}) and jumping to i+2")
+            option2 = nums[i] + dfs(i + 2, depth + 1)
+            print(f"{indent}Returned from DFS call for i={i+2} with accumulated value: {option2}")
             
-            result = max(skip, rob)
-            print(f"{indent}  Returning max({skip}, {rob}) = {result} from dfs({i})")
-            return result
+            # Calculate the maximum of both options
+            best_option = max(option1, option2)
+            print(f"{indent}At index {i}, the best option is max({option1}, {option2}) = {best_option}")
+            
+            
+            return best_option
         
-        final_result = dfs(0)
-        print("\nFinal maximum amount you can rob:", final_result)
-        return final_result
+        return dfs(0)
 
-# Example usage:
-# sol = Solution()
-# print(sol.rob([1, 2, 3]))  # Test with sample input
-
+# Example usage
 if __name__ == "__main__":
-    sol = Solution()
-    sol.rob([2,7,9,3,1])
+    solution = Solution()
+    nums = [1, 2, 3, 1]
+    print("\nFinal Result:", solution.rob(nums))
