@@ -31,5 +31,5 @@ class Solution:
 # Example usage
 if __name__ == "__main__":
     solution = Solution()
-    nums = [1, 2, 3, 1]
+    nums = [2, 7, 9, 3, 1]
     print("\nFinal Result:", solution.rob(nums))
