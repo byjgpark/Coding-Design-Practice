@@ -34,3 +34,31 @@ if __name__ == "__main__":
     solution = Solution()
     nums = [2, 7, 9, 3, 1]
     print("\nFinal Result:", solution.rob(nums))
+    
+    
+#     dfs(0) [Start at index 0]
+# ├── Option 1: Skip House 0 (value 2)
+# │     └── dfs(1)
+# │          ├── Option 1: Skip House 1 (value 7)
+# │          │     └── dfs(2)
+# │          │          ├── Option 1: Skip House 2 (value 9)
+# │          │          │     └── dfs(3)
+# │          │          │          ├── Option 1: Skip House 3 (value 3)
+# │          │          │          │     └── dfs(4)
+# │          │          │          │          ├── Option 1: Skip House 4 (value 1)
+# │          │          │          │          │     └── dfs(5) → returns 0
+# │          │          │          │          └── Option 2: Rob House 4 (1 + dfs(6)=1+0)
+# │          │          │          │                → returns 1
+# │          │          │          │     => dfs(4) returns max(0, 1) = 1
+# │          │          │          └── Option 2: Rob House 3 (3 + dfs(5)=3+0)
+# │          │          │                → returns 3
+# │          │          │     => dfs(3) returns max(1, 3) = 3
+# │          │          └── Option 2: Rob House 2 (9 + dfs(4)=9+1)
+# │          │                → returns 10
+# │          │     => dfs(2) returns max(3, 10) = 10
+# │          └── Option 2: Rob House 1 (7 + dfs(3)=7+3)
+# │                → returns 10
+# │     => dfs(1) returns max(10, 10) = 10
+# └── Option 2: Rob House 0 (2 + dfs(2)=2+10)
+#       → returns 12
+# => dfs(0) returns max(10, 12) = 12
