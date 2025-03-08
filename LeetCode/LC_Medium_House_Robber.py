@@ -20,6 +20,7 @@ class Solution:
             print(f"{indent}Returned from DFS call for i={i+2} with accumulated value: {option2}")
             
             
+            
             # Calculate the maximum of both options
             best_option = max(option1, option2)
             print(f"{indent}At index {i}, the best option is max({option1}, {option2}) = {best_option}")
