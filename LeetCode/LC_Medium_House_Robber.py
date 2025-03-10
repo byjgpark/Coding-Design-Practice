@@ -30,6 +30,7 @@ class Solution:
             
             # Determine best option
             best = max(option1, option2)
+            
             print(f"\n{indent}DECISION at index {i}:")
             print(f"{indent}├─ Option 1 (skip): {option1}")
             print(f"{indent}├─ Option 2 (rob): {option2}")
