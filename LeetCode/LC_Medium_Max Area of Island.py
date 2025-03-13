@@ -6,9 +6,9 @@ class Solution:
         rows, columns = len(grid), len(grid[0])
 
         # print("check rows", rows, "columns", columns)
-
         visited = set()
         island = 0
+        
         
 
         def bfs(r,c):
