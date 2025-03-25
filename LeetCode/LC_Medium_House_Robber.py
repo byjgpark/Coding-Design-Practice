@@ -21,6 +21,7 @@ class Solution:
             print(f"{indent}├─ Value returned: {option1}")
             
             # Option 2: Rob current house
+        
             print(f"\n{indent}Option 2: ROB house {i} (value {nums[i]})")
             print(f"{indent}├─ Adding value: {nums[i]}")
             print(f"{indent}├─ Moving to index {i+2}")
