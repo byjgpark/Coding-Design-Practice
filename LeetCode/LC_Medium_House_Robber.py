@@ -26,6 +26,7 @@ class Solution:
             print(f"{indent}├─ Adding value: {nums[i]}")
             print(f"{indent}├─ Moving to index {i+2}")
             option2 = nums[i] + dfs(i + 2, depth + 1)
+            
             print(f"\n{indent}BACK FROM OPTION 2 (index {i+2})")
             print(f"{indent}├─ Accumulated value: {option2}")
             
