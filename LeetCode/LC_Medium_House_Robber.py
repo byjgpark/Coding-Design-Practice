@@ -93,6 +93,7 @@ class Solution:
             
             print(f"{indent}├─ Total if we rob this house: {nums[i]} + {rob_next} = {option2}")
             
+            
             # Determine best option
             best = max(option1, option2)
             
