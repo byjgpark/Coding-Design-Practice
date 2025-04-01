@@ -91,6 +91,7 @@ class Solution:
             print(f"{indent}├─ Value from future houses: {rob_next}")
             option2 = nums[i] + rob_next
             
+            
             print(f"{indent}├─ Total if we rob this house: {nums[i]} + {rob_next} = {option2}")
             
             
