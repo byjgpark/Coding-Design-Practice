@@ -79,7 +79,6 @@ class Solution:
             print(f"\n{indent}BACK FROM OPTION 1 (index {i+1})")
             print(f"{indent}├─ Value returned: {option1}")
             
-            
             # Option 2: Rob current house
             print(f"\n{indent}Option 2: ROB house {i} (value {nums[i]})")
             print(f"{indent}├─ Adding current value: {nums[i]}")
