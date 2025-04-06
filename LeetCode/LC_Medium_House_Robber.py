@@ -67,7 +67,6 @@ class Solution:
             print(f"{indent}ENTERING DFS at index {i} (depth {depth})")
             print(f"{indent}Current house value: {nums[i] if i < len(nums) else 'Out of bounds'}")
             
-            
             if i >= len(nums):
                 print(f"{indent}Base case reached: Index {i} is beyond array.")
                 print(f"{indent}RETURNING 0")
@@ -90,6 +89,8 @@ class Solution:
             print(f"\n{indent}RETURN FROM ROB_NEXT (index {i+2})")
             print(f"{indent}├─ Value from future houses: {rob_next}")
             option2 = nums[i] + rob_next
+            
+            
             
             
             print(f"{indent}├─ Total if we rob this house: {nums[i]} + {rob_next} = {option2}")
