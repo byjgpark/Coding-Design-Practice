@@ -72,6 +72,7 @@ class Solution:
                 print(f"{indent}RETURNING 0")
                 return 0
             
+            
             # Option 1: Skip current house
             print(f"\n{indent}Option 1: SKIP house {i} (value {nums[i]})")
             print(f"{indent}├─ Moving to index {i+1}")
