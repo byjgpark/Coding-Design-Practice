@@ -67,6 +67,7 @@ class Solution:
             print(f"{indent}Current house value: {nums[i] if i < len(nums) else 'Out of bounds'}")
             
             
+            
             if i >= len(nums):
                 print(f"{indent}Base case reached: Index {i} is beyond array.")
                 print(f"{indent}RETURNING 0")
