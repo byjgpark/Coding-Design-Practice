@@ -20,11 +20,8 @@ class Solution:
         print(f"Initial dp[1] = {dp[1]} (max of first and second house)")
         
         for i in range(2, len(nums)):
-            
-            # debug the dp array at each step
-            print(f"\nAt house {i} (value: {nums[i]}):")
-            print(f"  dp array at this step: {dp[:i]}")
-            
+        
+        
             # Option 1: Skip current house, take previous max
             option1 = dp[i - 1]
             # Option 2: Rob current house, take max from two houses ago
