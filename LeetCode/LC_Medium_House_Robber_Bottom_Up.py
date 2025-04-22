@@ -15,6 +15,7 @@ class Solution:
         dp[0] = nums[0]
         dp[1] = max(nums[0], nums[1])
         
+        
         print("\nInitializing dp array:", dp)
         print(f"Initial dp[0] = {dp[0]} (value of first house)")
         print(f"Initial dp[1] = {dp[1]} (max of first and second house)")
