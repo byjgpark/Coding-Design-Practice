@@ -11,6 +11,7 @@ class Solution:
             print("Only one house with value", nums[0])
             return nums[0]
         
+        
         dp = [0] * len(nums)
         dp[0] = nums[0]
         dp[1] = max(nums[0], nums[1])
