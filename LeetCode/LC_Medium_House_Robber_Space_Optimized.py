@@ -13,6 +13,7 @@ class Solution:
         # Iterate through each house (represented by the amount 'num')
         for i, num in enumerate(nums):
             print(f"Processing house {i} with amount: {num}")
+            
 
             # 'temp' calculates the maximum amount if we rob the current house.
             # This is the current house's amount ('num') plus the maximum amount robbed up to house (i-2) ('rob1').
