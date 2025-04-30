@@ -13,8 +13,6 @@ class Solution:
         # Iterate through each house (represented by the amount 'num')
         for i, num in enumerate(nums):
             print(f"Processing house {i} with amount: {num}")
-            
-            
 
             # 'temp' calculates the maximum amount if we rob the current house.
             # This is the current house's amount ('num') plus the maximum amount robbed up to house (i-2) ('rob1').
@@ -22,6 +20,7 @@ class Solution:
             # which represents the case where we don't rob the current house.
             temp = max(num + rob1, rob2)
             print(f"  Calculation: temp = max(current_num + rob1, rob2) = max({num} + {rob1}, {rob2}) = {temp}")
+
 
             # Update rob1 to be the maximum amount robbed up to the previous house (i-1).
             # This was previously stored in rob2.
