@@ -46,12 +46,30 @@ if __name__ == "__main__":
     # Create an instance of the Solution class
     solution = Solution()
     # Call the rob method with an example list of house amounts
-    result = solution.rob([1, 2, 3, 1])
-    print(f"\nResult of robbing [1, 2, 3, 1]: {result}")
+    # result = solution.rob([1, 2, 3, 1])
+    # print(f"\nResult of robbing [1, 2, 3, 1]: {result}")
 
     # print("\n" + "="*30 + "\n")
 
     # # Another example
-    # result_2 = solution.rob([2, 7, 9, 3, 1])
-    # print(f"\nResult of robbing [2, 7, 9, 3, 1]: {result_2}")
+    result_2 = solution.rob([2, 7, 9, 3, 1])
+    print(f"\nResult of robbing [2, 7, 9, 3, 1]: {result_2}")
 
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+
+        rob1, rob2 = 0, 0
+
+        print("check rob1", rob1, "rob2", rob2)
+
+        for i, num in enumerate(nums):
+
+            temp = max(nums[i] + rob1, rob2)
+
+            rob1 = rob2
+
+            rob2 = temp
+
+        return rob2
+        
+        
