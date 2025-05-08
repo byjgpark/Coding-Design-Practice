@@ -65,6 +65,7 @@ class Solution:
                     matrix[i][0] = 0
                     matrix[0][j] = 0
 
+
         print("Matrix after marking phase:")
         for row in matrix:
             print(row)
