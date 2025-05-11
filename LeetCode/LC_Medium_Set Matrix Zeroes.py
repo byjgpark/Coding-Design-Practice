@@ -106,3 +106,9 @@ if __name__ == "__main__":
     solution.setZeroes(matrix)
     print("Final matrix (outside function):")
     print(matrix)
+
+matrix = [
+    [0, 1, 2, 0],
+    [3, 4, 5, 2],
+    [1, 3, 1, 5]
+]
