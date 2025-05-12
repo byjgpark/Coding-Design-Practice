@@ -78,6 +78,7 @@ class Solution:
                     print(f"matrix[i][0] = {matrix[i][0]} & matrix[0][j] = {matrix[0][j]}")
                     matrix[i][j] = 0
 
+
         print("Matrix after zeroing inner cells:")
         for row in matrix:
             print(row)
