@@ -66,7 +66,6 @@ class Solution:
                     matrix[i][0] = 0
                     matrix[0][j] = 0
 
-
         print("Matrix after marking phase:")
         for row in matrix:
             print(row)
@@ -104,17 +103,18 @@ class Solution:
 
 if __name__ == "__main__":
     # matrix = [[1, 1, 1], [1, 0, 1], [1, 1, 1]]
-    matrix = [[0, 1, 2, 0], [3, 4, 5, 2], [1, 3, 1, 5]]
+    # matrix = [[0, 1, 2, 0], [3, 4, 5, 2], [1, 3, 1, 5]]
+    matrix2 = [[1, 2, 0, 4], [5, 0, 7, 8], [9, 10, 11, 12]]
     solution = Solution()
-    solution.setZeroes(matrix)
+    solution.setZeroes(matrix2)
     print("Final matrix (outside function):")
-    print(matrix)
+    print(matrix2)
 
-matrix1 = [
-    [0, 1, 2, 0],
-    [3, 4, 5, 2],
-    [1, 3, 1, 5]
-]
+# matrix1 = [
+#     [0, 1, 2, 0],
+#     [3, 4, 5, 2],
+#     [1, 3, 1, 5]
+# ]
 
 matrix2 = [[1, 2, 0, 4]
            [5, 0, 7, 8]
