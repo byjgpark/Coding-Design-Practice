@@ -132,13 +132,33 @@
 class Solution:
     def setZeroes(self, matrix: List[List[int]]) -> None:
 
-        # First_Row_Has_True, First_Colum_Has_True
+        row = len(matrix)
+        col = len(matrix[0])
 
-        # for i in range(matrix[0]):
+        First_Colum_Has_True = False
+        First_Row_Has_True = False
 
-        print("check matrix[0]", range(matrix))
+        for i in range(col):
+            if matrix[0][i] == 0:
+                First_Colum_Has_True = True
+                
+        for i in range(row):
+            if matrix[i][0] == 0:
+                First_Row_Has_True = True
+
+        # print("check matrix[0]", range(matrix[0]))
+
+        # Step 2: mark 1st row and column using inner cell ?
+
+        for i in ran
+
+        # Step 3: using 1st row & column's markers, mark 0 in the inner cells
+
+        # Step 4 & 5 : using var markers, mark 1st row & column 
+
 
         """
         Do not return anything, modify matrix in-place instead.
         """
+        
         
