@@ -150,15 +150,46 @@ class Solution:
 
         # Step 2: mark 1st row and column using inner cell ?
 
-        for i in ran
+        for i in range(1, row):
+            for j in range(1, col):
+                if matrix[i][j] == 0:
+                    matrix[i][0] = 0
+                    matrix[0][j] = 0
 
+        # for row in matrix:
+        #     print(row)
+        # print()
+        
         # Step 3: using 1st row & column's markers, mark 0 in the inner cells
+        for i in range(1, row):
+            for j in range(1, col):
+                if matrix[i][0] == 0 or matrix[0][j] == 0:
+                    matrix[i][j] = 0
+                    # matrix[i][0] = 0
+                    # matrix[0][j] = 0
+        
+        # for row in matrix:
+        #     print(row)
+        # print()
 
         # Step 4 & 5 : using var markers, mark 1st row & column 
+        if First_Colum_Has_True == True:
+            for j in range(col):
+                matrix[0][j] = 0
+
+        # Step 4 & 5 : using var markers, mark 1st row & column 
+        if First_Row_Has_True == True:
+            for i in range(row):
+                matrix[i][0] = 0
+
+        for row in matrix:
+            print(row)
+        print()
 
 
         """
         Do not return anything, modify matrix in-place instead.
         """
+        
         
         
