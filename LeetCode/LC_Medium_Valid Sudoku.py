@@ -29,4 +29,5 @@ class Solution:
                     if board[row][col] in seen:
                         return False
                     seen.add(board[row][col])
+                    
         return True
