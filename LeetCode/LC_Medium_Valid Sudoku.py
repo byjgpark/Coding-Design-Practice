@@ -31,3 +31,6 @@ class Solution:
                     seen.add(board[row][col])
                     
         return True
+    
+    
+    
