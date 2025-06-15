@@ -57,4 +57,5 @@ if __name__ == "__main__":
 
     solution = Solution()
     result = solution.isValidSudoku(sample_board)
+    
     print(f"Result: {result}")
