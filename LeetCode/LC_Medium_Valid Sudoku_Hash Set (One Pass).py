@@ -21,7 +21,7 @@ class Solution:
                 if val in rows[r]:
                     print(f"  ! Duplicate '{val}' found in row {r}")
                     return False
-                if val in cols[c]:
+                if val in cols[c]:     
                     print(f"  ! Duplicate '{val}' found in column {c}")
                     return False
                 if val in squares[(r // 3, c // 3)]:
@@ -59,4 +59,6 @@ if __name__ == "__main__":
     result = solution.isValidSudoku(sample_board)
     
     print(f"Result: {result}")
+    
+    
 
