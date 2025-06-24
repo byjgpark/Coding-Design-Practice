@@ -60,11 +60,11 @@
     
 #     print(f"Result: {result}")
 
+
 #Second trial
 
 class Solution:
     def isValidSudoku(self, board: List[List[str]]) -> bool:
-        
         
         rows = defaultdict(set)
         cols = defaultdict(set)
