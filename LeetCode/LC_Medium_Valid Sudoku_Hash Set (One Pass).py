@@ -64,36 +64,65 @@
 #Second trial
 
 
+# class Solution:
+#     def isValidSudoku(self, board: List[List[str]]) -> bool:
+        
+#         rows = defaultdict(set)
+#         cols = defaultdict(set)
+#         squares = defaultdict(set)
+
+#         print("check rows = ", rows, "cols = ", cols, " square = ", squares)
+        
+#         for row in range(9):
+#             for col in range(9):
+
+#                 if board[row][col] in rows[row][col]:
+#                     print("check row : ", row, " col : ", col)
+#                     return False
+                
+#                 if board[row][col] in rows[row][col]:
+#                     return False
+
+#                 if board[row][col] in squares[row][col]:
+#                     return False
+
+#                 rows[row][col].add(board[row][col])
+#                 cols[row][col].add(board[row][col])
+#                 squares[row//3][col//3].add(board[row][col])
+
+#         return True        
+
+# Final attempt
 class Solution:
     def isValidSudoku(self, board: List[List[str]]) -> bool:
         
         rows = defaultdict(set)
-        cols = defaultdict(set)
+        columns = defaultdict(set)
         squares = defaultdict(set)
 
-        print("check rows = ", rows, "cols = ", cols, " square = ", squares)
-        
         for row in range(9):
-            for col in range(9):
+            for column in range(9):
+                val = board[row][column]       
+                print("check board[row][column] = ", board[row][column])
 
-                if board[row][col] in rows[row][col]:
-                    print("check row : ", row, " col : ", col)
+                if val == ".":
+                    continue
+
+                if val in rows[row]:
+                    return False
+
+                if val in columns[column]:
+                    return False
+
+                if val in squares[(row//3),(column//3)]:
                     return False
                 
-                if board[row][col] in rows[row][col]:
-                    return False
-
-                if board[row][col] in squares[row][col]:
-                    return False
-
-                rows[row][col].add(board[row][col])
-                cols[row][col].add(board[row][col])
-                squares[row//3][col//3].add(board[row][col])
-
-        return True        
-
-
-        
+                # if val in  
+                rows[row].add(val)
+                columns[column].add(val)
+                squares[(row//3),(column//3)].add(val)
+                
+        return True
 
                     
 
