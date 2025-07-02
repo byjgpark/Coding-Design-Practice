@@ -65,3 +65,4 @@ class Solution:
             [".",".",".",".","8",".",".","7","9"]
         ]
         solution.isValidSudoku(board)
+
