@@ -66,3 +66,4 @@ class Solution:
         ]
         solution.isValidSudoku(board)
 
+
