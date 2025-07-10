@@ -39,6 +39,7 @@ class Solution:
                     print(f"  !!! Duplicate {digit} found in square {square_index}")
                     return False
                 
+                
                 # Update bitmasks
                 rows[r] |= pos
                 cols[c] |= pos
