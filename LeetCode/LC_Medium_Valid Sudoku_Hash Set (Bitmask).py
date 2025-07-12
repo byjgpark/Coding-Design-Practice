@@ -40,6 +40,8 @@ class Solution:
                     return False
                 
                 
+                
+                
                 # Update bitmasks
                 rows[r] |= pos
                 cols[c] |= pos
