@@ -72,4 +72,5 @@ if __name__ == "__main__":
         [".",".",".",".","8",".",".","7","9"]
     ]
 
+
     solution.isValidSudoku(board)
