@@ -20,6 +20,7 @@ class Solution:
                     print(f"  Cell empty, skipping")
                     continue
 
+
                 digit = cell
                 val = int(digit) - 1
                 pos = 1 << val
