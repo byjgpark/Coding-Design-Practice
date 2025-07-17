@@ -36,6 +36,7 @@ class Solution:
                 print(f"  Col {c} before: {format_bitmask(cols[c])}")
                 print(f"  Square {square_index} before: {format_bitmask(squares[square_index])}")
 
+
                 # Check for duplicates
                 if rows[r] & pos:
                     print(f"  !!! Duplicate {digit} found in row {r}")
