@@ -36,7 +36,6 @@ class Solution:
                 print(f"  Col {c} before: {format_bitmask(cols[c])}")
                 print(f"  Square {square_index} before: {format_bitmask(squares[square_index])}")
 
-
                 # Check for duplicates
                 if rows[r] & pos:
                     print(f"  !!! Duplicate {digit} found in row {r}")
@@ -47,7 +46,6 @@ class Solution:
                 if squares[square_index] & pos:
                     print(f"  !!! Duplicate {digit} found in square {square_index}")
                     return False
-
 
                 # Update bitmasks
                 rows[r] |= pos
@@ -60,6 +58,7 @@ class Solution:
 
         print("\nValidation complete: board is valid!")
         return True
+
 
 if __name__ == "__main__":  
     solution = Solution()
