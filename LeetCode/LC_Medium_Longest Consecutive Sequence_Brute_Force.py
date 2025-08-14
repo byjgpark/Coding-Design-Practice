@@ -32,3 +32,34 @@ if __name__ == "__main__":
     nums = [100, 4, 200, 1, 3, 2]
     sol = Solution()
     sol.longestConsecutive(nums)
+
+# 1st trial
+
+class Solution:
+    def longestConsecutive(self, nums: List[int]) -> int:
+        
+        store = set(nums)
+        res = 0
+
+        # print("check sets =", sets)
+
+        print("check length =", len(nums))
+
+        for num in store:
+            
+            if num-1 not in store:
+
+                curr = num + 1
+                streak = 1
+
+                while curr in store:
+
+                    # print("check num in while", curr)
+                    streak+=1
+                    curr+=1
+                    # res = max(res, streak)                    
+                res = max(res, streak)
+            # print("check num", num)
+        return res
+
+
