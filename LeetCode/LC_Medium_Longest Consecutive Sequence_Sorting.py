@@ -17,3 +17,4 @@ class Solution:
             curr += 1
             res = max(res, streak)
         return res
+        
