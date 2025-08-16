@@ -34,7 +34,6 @@ if __name__ == "__main__":
     sol.longestConsecutive(nums)
 
 # 1st trial
-
 class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:
         
