@@ -17,4 +17,28 @@ class Solution:
             curr += 1
             res = max(res, streak)
         return res
+
+#2 trial
+
+class Solution:
+    def longestConsecutive(self, nums: List[int]) -> int:
+        
+        nums.sort()
+        i = 0
+        streak, curr = 0, nums[0]
+
+        print("check streak =", streak, " curr =", curr)
+
+        while i < len(nums):
+
+            if curr != nums[i]:
+                curr = 0
+                streak = 0
+
+            while curr == nums[i]:
+                i+=1
+
+            curr+=1
+            streak+=1
+             
         
