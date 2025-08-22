@@ -12,6 +12,7 @@ class Solution:
                 mp[num + mp[num + 1]] = mp[num]
                 res = max(res, mp[num])
         return res
+        
 
 if __name__ == "__main__":
     s = Solution()
