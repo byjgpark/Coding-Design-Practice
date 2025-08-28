@@ -82,7 +82,7 @@ class Solution:
             # print("check num", num)
             # print("check nums[i]", nums[i])
             if nums[i] not in map:
-                total = 
+                # total = 
 
 
 
