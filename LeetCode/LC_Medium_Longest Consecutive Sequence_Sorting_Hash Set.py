@@ -84,7 +84,25 @@ class Solution:
             if nums[i] not in map:
                 # total = 
 
+# 4rd trial
+class Solution:
+    def longestConsecutive(self, nums: List[int]) -> int:
+        
+        map = defaultdict(int)
+        res = 0
 
+        for num in nums:
+            # print("check num =", num)
+            # print("check map =", map)
+            # print("check map[num] =", map[num])
 
+            if not map[num]:
+                map[num] = map[num-1]+ map[num+1]+1
+                map[num - map[num-1]] = map[num]
+                map[num + map[num+1]] = map[num]
+                print("check res", res)    
+                res = max(res, map[num])
+
+        return res
         
         
