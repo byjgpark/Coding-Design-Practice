@@ -31,5 +31,32 @@ class Solution:
             for j in range(i+1 ,len(nums)):
                 for k in range(j+1 ,len(nums)):
                     if nums[i] + nums[j] + nums[k] == 0:
-                        temp = 
+                        temp = []
                         print("check =", nums[i], nums[j], nums[k])
+
+## 3rd trial
+class Solution:
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        
+        nums.sort()
+        res = set()
+        # print("Check nums", nums)
+
+        for i in range(0 ,len(nums)):
+            # print("check i = ", i)
+            for j in range(i+1 ,len(nums)):
+                for k in range(j+1 ,len(nums)):
+                    if nums[i] + nums[j] + nums[k] == 0:
+                        temp = [nums[i], nums[j], nums[k]]
+                        res.add(tuple(temp))
+                        print("check =", nums[i], nums[j], nums[k])
+                        # print("Check temp =", temp)
+                        # print("Check tuple =", res)
+        # [print("check =",i) for i in res]
+        return [list(i) for i in res]
+        # answer = []
+        # for i in res:
+        #     answer.append(list(i))
+        #     # print("check i =", i)
+
+        # return answer
