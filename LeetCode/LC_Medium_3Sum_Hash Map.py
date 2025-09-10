@@ -24,3 +24,5 @@ class Solution:
             for j in range(i + 1, len(nums)):
                 count[nums[j]] += 1
         return res
+
+        # nums.sort()  # [-4, -1, -1, 0, 1, 2]
