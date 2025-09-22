@@ -22,6 +22,7 @@ class Solution:
                     res.append([nums[i], nums[j], target])
 
             for j in range(i + 1, len(nums)):
+                
                 count[nums[j]] += 1
         return res
 
