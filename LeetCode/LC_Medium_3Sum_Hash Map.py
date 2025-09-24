@@ -60,6 +60,45 @@ class Solution:
         
         # print("check nums", nums)
 
+# 3rd trial
+class Solution:
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+
+        nums.sort()
+        hash_map = defaultdict(int)
+        res = []
+
+        for num in nums:
+            hash_map[num]+=1
+
+        for i in range(len(nums)):
+            hash_map[nums[i]]-=1
+            
+            if i and nums[i] == nums[i-1]:
+                continue
+            
+            for j in range(i+1, len(nums)):
+
+                hash_map[nums[j]]-=1
+                
+                if j-1 > i and nums[j] == nums[j-1]:
+                    continue
+                
+                target = -(nums[i]+nums[j])
+
+                if hash_map[target] >0:
+                    res.append([nums[i], nums[j], target])
+                
+                hash_map[nums[j]]+=1
+                
+
+                # hash_map[num]+=1
+            # for j in range(i+1, len(nums)):
+            #     hash_map[nums[j]]+=1
+                
+
+        return res
+
         
 
 
