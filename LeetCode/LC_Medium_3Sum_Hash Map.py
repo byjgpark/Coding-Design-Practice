@@ -91,7 +91,7 @@ class Solution:
                 
                 hash_map[nums[j]]+=1
                 
-
+            # vs 
                 # hash_map[num]+=1
             # for j in range(i+1, len(nums)):
             #     hash_map[nums[j]]+=1
