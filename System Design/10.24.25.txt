@@ -1,0 +1,3 @@
+1. I made a plan for the best way to study system design.
+
+2. Tomorrow, I need to study what TCP/IP is.
