@@ -1,3 +1,5 @@
+tokens = ["2", "1", "+", "3", "*"]
+
 class Solution:
     def evalRPN(self, tokens: List[str]) -> int:
         while len(tokens) > 1:
