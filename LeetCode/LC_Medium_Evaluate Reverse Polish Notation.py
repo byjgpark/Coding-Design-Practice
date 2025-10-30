@@ -36,3 +36,20 @@ class Solution:
         while len(tokens) > 1:
             for i in range(tokens):
                 if tokens[i] == "+":
+
+# 3rd trial
+class Solution:
+    def evalRPN(self, tokens: List[str]) -> int:
+        
+        print("check tokens =", tokens)
+
+        print("check tokens =", len(tokens))
+
+        while len(tokens) > 1:
+            for i in range(len(tokens)):
+                if tokens[i] in "+-*/":
+                    # print("check tokens[i] =", tokens[i], " check i= ",i)
+                    a=int(tokens[i-2])
+                    # b=int(tokens[i-2])
+                    b=int(tokens[i-1])
+                    print("check a =",a ," b =",b)
