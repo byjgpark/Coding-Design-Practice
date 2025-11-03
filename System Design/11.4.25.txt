@@ -1,0 +1,4 @@
+1. Read til page 19  - Considerations of using a CDN
+• Cost: CDNs are run by third-party providers, and you are charged for data transfers in
+and out of the CDN. Caching infrequently used assets provides no significant benefits so
+you should consider moving them out of the CDN
