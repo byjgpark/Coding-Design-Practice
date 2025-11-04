@@ -54,3 +54,42 @@ class Solution:
                     # b=int(tokens[i-2])
                     b=int(tokens[i-1])
                     print("check a =",a ," b =",b)
+
+# 4th trial
+class Solution:
+    def evalRPN(self, tokens: List[str]) -> int:
+
+        print("check tokens =", len(tokens))
+
+        result = 0
+        operators = {"+", "-", "*", "/"}
+
+        while len(tokens) > 1:
+            for i in range(len(tokens)):
+                # print("check i =",i)
+                if tokens[i] in "+-*/":
+                    a = int(tokens[i-2])
+                    b = int(tokens[i-1])
+                    if tokens[i] == "+" in tokens:
+                        result = a+b
+                        print("check result", result) 
+
+                    elif tokens[i] == "*" in tokens: 
+                        result = a*b 
+                        print("check tokens", i)
+
+                    elif tokens[i] == "-" in tokens: 
+                        result = a-b 
+                        print("check tokens", i)
+
+                    elif tokens[i] == "/" in tokens: 
+                        result = a/b 
+                        print("check tokens", i)
+
+            
+
+                
+
+        
+
+        
