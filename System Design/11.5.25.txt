@@ -1,0 +1,6 @@
+1. Read til 20 pages - Stateless web tier
+Now it is time to consider scaling the web tier horizontally. For this, we need to move state
+(for instance user session data) out of the web tier. A good practice is to store session data in
+the persistent storage such as relational database or NoSQL. Each web server in the cluster
+can access state data from databases. This is called stateless web tier.
+
