@@ -1,0 +1,4 @@
+Read Page 28 - • You can add more CPU, RAM, etc. to your database server, but there are hardware
+limits. If you have a large user base, a single server is not enough.
+• Greater risk of single point of failures.
+• The overall cost of vertical scaling is high. Powerful servers are much more expensive.
