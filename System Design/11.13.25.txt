@@ -1,0 +1,4 @@
+Read til page 36 - Dr. Dean from Google reveals the length of typical computer operations in 2010 [1]. Some
+numbers are outdated as computers become faster and more powerful. However, those
+numbers should still be able to give us an idea of the fastness and slowness of different
+computer operations.
