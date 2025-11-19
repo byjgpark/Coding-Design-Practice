@@ -1,1 +1,2 @@
-Page 51
+Page 51 - In this chapter, you are asked to design a rate limiter. Before starting the design, we first look
+at the benefits of using an API rate limiter:
