@@ -1,0 +1,3 @@
+Page 57 - The token bucket algorithm takes two parameters:
+• Bucket size: the maximum number of tokens allowed in the bucket
+• Refill rate: number of tokens put into the bucket every second
