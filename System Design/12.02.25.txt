@@ -1,0 +1,3 @@
+Page 66 - before either of them writes the value back, each will increment the counter by one and write
+it back without checking the other thread. Both requests (threads) believe they have the
+correct counter value 4. However, the correct counter value should be 5.
