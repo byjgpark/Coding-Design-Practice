@@ -40,7 +40,28 @@ class Solution:
                 # print("Check ceil =", math.ceil(1.2))
                 print("Check remaining =", remaining)
 
+## 3rd trial
+class Solution:
+    def minEatingSpeed(self, piles: List[int], h: int) -> int:
+        
+        l, r = 1, max(piles)
+        res=r
+    
+        while l <= r:
 
+            k=(l+r)//2            
+            remaining = 0
+            for pile in piles:
 
+                remaining+=math.ceil(pile/k)
+                # print("Check remaining =", remaining)
+
+            if remaining <= h:
+                res = k
+                r = k-1
+            else:
+                l = k+1
+        
+        return res
 
         
