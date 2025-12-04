@@ -64,4 +64,33 @@ class Solution:
         
         return res
 
+## 4th trial 
+
+class Solution:
+    def minEatingSpeed(self, piles: List[int], h: int) -> int:
+        
+        l, r = 1, max(piles)
+        print("Check l =", l," r = ",r)
+        res = r
+
+        while l<=r:
+
+            k = (l+r)//2
+            remaining = 0
+
+            print("Check k =", k)
+
+            for pile in piles:
+
+                remaining += math.ceil(pile/k)
+                # print("Check math.ceil(pile/k) =",math.ceil(pile/k)) 
+                # print("check pile", pile)
+            if remaining <= h:
+                res = k
+                r = k-1
+            else:
+                l = k+1
+        
+        return res
+                # k = 
         
