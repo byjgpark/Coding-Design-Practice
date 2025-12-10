@@ -1,0 +1,2 @@
+Pagg 120 - Candidate: Can you give an example of how a URL shortener work?
+Interviewer: Assume URL
