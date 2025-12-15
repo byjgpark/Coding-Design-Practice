@@ -1,0 +1,4 @@
+Page 149 - Server-side rendering: Numerous websites use scripts like JavaScript, AJAX, etc to
+generate links on the fly. If we download and parse web pages directly, we will not be able
+to retrieve dynamically generated links. To solve this problem, we perform server-side
+rendering (also called dynamic rendering) first before parsing a page
