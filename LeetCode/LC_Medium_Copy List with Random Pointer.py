@@ -4,6 +4,9 @@ class Node:
         self.next = next
         self.random = random
 
+    def __repr__(self):
+        return f"Node(val={self.val}, next={self.next.val if self.next else None}, random={self.random.val if self.random else None})"
+
 class Solution:
     def copyRandomList(self, head):
         if not head:
@@ -15,7 +18,9 @@ class Solution:
         cur = head
         while cur:
             old_to_new[cur] = Node(cur.val)
+            print(f"created {old_to_new[cur]} from old Node(val={cur.val}) id={id(cur)}")
             cur = cur.next
+            # print(f"created {old_to_new[cur]} from old Node(val={cur.val}) id={id(cur)}")
 
         # 2. Assign next and random pointers
         cur = head
