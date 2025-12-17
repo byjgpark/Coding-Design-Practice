@@ -12,19 +12,24 @@ class Solution:
         if not head:
             return None
 
+        print("check head =", head)
+
         # 1. Map old nodes to new nodes
         old_to_new = {}
 
         cur = head
         while cur:
+            # print("Check cur =", cur)
             old_to_new[cur] = Node(cur.val)
             print(f"created {old_to_new[cur]} from old Node(val={cur.val}) id={id(cur)}")
             cur = cur.next
+            print(f"moved to {cur} id={id(cur) if cur else None}")
             # print(f"created {old_to_new[cur]} from old Node(val={cur.val}) id={id(cur)}")
 
         # 2. Assign next and random pointers
         cur = head
         while cur:
+            print(f"check old_to_new obj ={old_to_new[cur]}")
             new_node = old_to_new[cur]
             new_node.next = old_to_new.get(cur.next)
             new_node.random = old_to_new.get(cur.random)
