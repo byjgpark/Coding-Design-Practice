@@ -1,0 +1,10 @@
+Page 179 page - In the chapter, we focus on designing a chat app like Facebook messenger, with an emphasis
+on the following features:
+• A one-on-one chat with low delivery latency
+• Small group chat (max of 100 people)
+• Online presence
+• Multiple device support. The same account can be logged in to multiple accounts at the
+same time.
+• Push notifications
+It is also important to agree on the design scale. We will design a system that supports 50
+million DAU.
