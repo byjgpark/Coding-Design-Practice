@@ -1,0 +1,5 @@
+184 page - Stateless Services
+Stateless services are traditional public-facing request/response services, used to manage the
+login, signup, user profile, etc. These are common features among many websites and apps.
+Stateless services sit behind a load balancer whose job is to route requests to the correct
+services based on the request paths. These services can be monolithic or individual

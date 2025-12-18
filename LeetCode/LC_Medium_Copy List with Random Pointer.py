@@ -29,10 +29,17 @@ class Solution:
         # 2. Assign next and random pointers
         cur = head
         while cur:
+            print(f"old_to_new = {old_to_new}")
+            print(f"check cur = {cur} id={id(cur)}")
             print(f"check old_to_new obj ={old_to_new[cur]}")
             new_node = old_to_new[cur]
+            print(f"check new_node = {new_node}")
+            print(f"check cur.next = {cur.next}")
             new_node.next = old_to_new.get(cur.next)
+            print(f"check new_node.next = {new_node.next}")
+            print(f"check old_to_new.cur.next = {old_to_new.cur.next}")
             new_node.random = old_to_new.get(cur.random)
+            print(f"check new_node.random = {new_node.random}")
             cur = cur.next
 
         # 3. Return head of new list
