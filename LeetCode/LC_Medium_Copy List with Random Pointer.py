@@ -37,7 +37,7 @@ class Solution:
             print(f"check cur.next = {cur.next}")
             new_node.next = old_to_new.get(cur.next)
             print(f"check new_node.next = {new_node.next}")
-            print(f"check old_to_new.cur.next = {old_to_new.cur.next}")
+            print(f"check old_to_new.get(cur.next = {old_to_new.cur.next}")
             new_node.random = old_to_new.get(cur.random)
             print(f"check new_node.random = {new_node.random}")
             cur = cur.next
